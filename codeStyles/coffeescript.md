@@ -2,13 +2,13 @@
 # TMD Naming Rule
 
 ### Format (命名格式)
-- Variable (變數)
+- Variable (變數)  
   camelCase (駝峰式，開頭小寫)
-- Function (函式)
+- Function (函式)  
   camelCase (駝峰式，開頭小寫)
-- Class (類別)
+- Class (類別)  
   CamelCase (駝峰式，開頭大寫)
-- Constant (常數)
+- Constant (常數)  
   UPPERCASE (全部大寫)
   
 
