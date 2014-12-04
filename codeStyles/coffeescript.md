@@ -11,6 +11,6 @@
 - Constant (常數)  
   UPPERCASE (全部大寫)
   
-### 其餘參考
+# 其餘參考
 - [CoffeeLint](http://www.coffeelint.org/)  
 - [GitHub Javascript Styleguide](https://github.com/styleguide/javascript)
