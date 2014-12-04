@@ -3,6 +3,8 @@ warehouse
 
 code warehouse
 
+### codeRules
+
 ### codeStyles  
 - coffeescript  
 - jade  
