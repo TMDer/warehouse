@@ -13,4 +13,5 @@
 - 如果因爲設定了 css 屬性，而影響到元件的樣式，請使用 class 命名限縮範圍，同時也進行模組樣式修正。
 
 # 其餘參考
-- [GitHub CSS Styleguide](https://github.com/styleguide/css)
+- [GitHub CSS Styleguide](https://github.com/styleguide/css)  
+- [idiomatic CSS](https://github.com/necolas/idiomatic-css)
