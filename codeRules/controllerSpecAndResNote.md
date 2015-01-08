@@ -29,7 +29,7 @@ res.serverErrorWithSocket error
 res.serverErrorWithSocket ParserService.errorToJson error
 ```
 
-幾個我們系統中常見的 controller 結尾回傳方式，差異是 ？
+- 幾個我們系統中常見的 controller 結尾回傳方式，差異是 ？
 
 
 ```
@@ -42,9 +42,9 @@ request(sails.hooks.http.app)
   # res.body.should.be ....
 ```
 
-controller spec 這裡的 error, res.body 哪裡來 ？
+- controller spec 這裡的 error, res.body 哪裡來 ？
 
-有沒有發現 error 總是 null 呢 ？
+- 有沒有發現 error 總是 null 呢 ？
 
 #### 如果以上問題能清楚回答，那恭喜你看到這裡就可以了 ～～～～～  YA .
 
@@ -110,7 +110,7 @@ res.serverError(err, viewOrRedirect, sendSocket = false) ->
 > 會分別在 ok / serverError 中判斷是否丟出 socket.emit
 
 
-### 小結：
+### 小結
 
 如果沒有需要在前端 show 出訊息使用 ` res.ok && res.serverError ` 即可，
 
@@ -140,7 +140,7 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
 
 ## Controller Spec
 
-前情提要： `.end (error, res)` 的error 為何總是 null ？
+前情提要： `.end (error, res)` 的 error 為何總是 null / res.body 是什麼？
 
 ```
   request(sails.hooks.http.app)
@@ -154,6 +154,7 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
     # res.body.should.be ....
 ```
 > 沒有用 expect 的話 `(error == null).should.be.true` 只是像棒球的快樂槍一樣。
+
 > res.body 等同於 api controller 中最後所傳的 error / data （包含後續對參數的處理變動）。
 
 補充：
