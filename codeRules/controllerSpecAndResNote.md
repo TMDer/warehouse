@@ -1,6 +1,6 @@
 # Controller Spec And Res Note
 
-一切的想了解起因於開 spec
+一切的想了解起因於開 spec :
 
 對於回傳的 message 到底該怎麼開 ？  這樣開後端實作會不會有問題 ＝—＝？
 
@@ -69,6 +69,7 @@ res.serverErrorWithSocket ParserService.errorToJson error
 ```
 # Sails 定義 / res.status 也是定義的一部分
 res.serverError(err, viewOrRedirect, sendSocket = false) ->
+
   res.status = 500
   # do sth ...
 
@@ -77,11 +78,15 @@ res.ok(data, viewOrRedirect, sendSocket = false) ->
   res.status = 200
   # do sth ...
 
+
+
 # TMDer 定義
 res.serverErrorWithSocket(err, viewOrRedirect) ->
+
   @res.serverError(err, viewOrRedirect, true)
 
 res.okWithSocket(data, viewOrRedirect) ->
+
   @res.ok(data, viewOrRedirect, true)
 ```
 
@@ -90,7 +95,8 @@ res.okWithSocket(data, viewOrRedirect) ->
 #### 那傳遞 sendSocket 進去的用意 ？
 
 ```
-res.ok(data, viewOrRedirect, sendSocket = false) ->
+res.serverError(err, viewOrRedirect, sendSocket = false) ->
+
   if sendSocket
     req.socket.emit "error",
       verb: req.options.action
@@ -99,7 +105,8 @@ res.ok(data, viewOrRedirect, sendSocket = false) ->
       locals: locals.error
       id: req.param("id") || “”
 
-res.serverError(err, viewOrRedirect, sendSocket = false) ->
+
+res.ok(data, viewOrRedirect, sendSocket = false) ->
 
   if sails.config.environment isnt "test" && sendSocket
     req.socket.emit "message",
