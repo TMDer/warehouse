@@ -10,14 +10,13 @@
 
 - [問題]
 
-  - [來來來，這些東西你真的搞懂了嗎 ？](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecResNote.md#%E4%BE%86%E4%BE%86%E4%BE%86%E9%80%99%E4%BA%9B%E6%9D%B1%E8%A5%BF%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%90%9E%E6%87%82%E4%BA%86%E5%97%8E-)
+  - [來來來，這些東西你真的搞懂了嗎 ？](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecAndResNote.md#%E4%BE%86%E4%BE%86%E4%BE%86%E9%80%99%E4%BA%9B%E6%9D%B1%E8%A5%BF%E4%BD%A0%E7%9C%9F%E7%9A%84%E6%90%9E%E6%87%82%E4%BA%86%E5%97%8E-)
 
 - [解答]
 
-  - [Controller Return res.XXXX ?](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecResNote.md#controller-return-resxxxx-)
+  - [Controller Return res.XXXX ?](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecAndResNote.md#controller-spec)
 
-  - [Controller Spec](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecResNote.md#controller-spec)
-
+  - [Controller Spec](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecAndResNote.md#controller-spec)
 ***
 
 ## 來來來，這些東西你真的搞懂了嗎 ？
