@@ -42,16 +42,89 @@ request(sails.hooks.http.app)
   # res.body.should.be ....
 ```
 
-test spec 這裡的 error 哪裡來 ？
+test spec 這裡的 error, res.body 哪裡來 ？
 
 有沒有發現 error 總是 null 呢 ？
-
 
 #### 如果以上問題能清楚回答，那恭喜你看到這裡就可以了 ～～～～～  YA .
 
 ***
 
+## Controller Return res.XXXX ?
 
+簡單說：帶有 Socket 的都是 TMDer 我們自己定義的，意義與名稱一樣就是跟 Socket 有關係，
+
+上面的簡單說的看起來就像廢話一樣，還是直接來看彼此間的結構關係吧。
+
+```
+# Sails 定義 / res.status 也是定義的一部分
+res.serverError(err, viewOrRedirect, sendSocket = false) ->
+  res.status = 500
+  # do sth ...
+
+res.ok(data, viewOrRedirect, sendSocket = false) ->
+
+  res.status = 200
+  # do sth ...
+
+# TMDer 定義
+res.serverErrorWithSocket(err, viewOrRedirect) ->
+  @res.serverError(err, viewOrRedirect, true)
+
+res.okWithSocket(data, viewOrRedirect) ->
+  @res.ok(data, viewOrRedirect, true)
+```
+
+> Sails 與 TMDer 定義的差別真的只有一個：sendSocket。
+
+#### 那傳遞進去的用意是 ？
+
+```
+res.ok(data, viewOrRedirect, sendSocket = false) ->
+  if sendSocket
+    req.socket.emit "error",
+      verb: req.options.action
+      model: req.options.controller
+      data: err
+      locals: locals.error
+      id: req.param("id") || “”
+
+res.serverError(err, viewOrRedirect, sendSocket = false) ->
+
+  if sails.config.environment isnt "test" && sendSocket
+    req.socket.emit "message",
+      verb: req.options.action
+      model: req.options.controller
+      data: data
+```
+> 會分別在 ok / serverError 中判斷是否丟出 socket.emit
+
+
+### 小結：
+
+如果沒有需要在前端 show 出訊息使用 ` res.ok && res.serverError ` 即可，
+
+反之，需要在前端 show 出訊息則使用 ` res.serverErrorWithSocket &&  res.okWithSocket `。
+
+
+####  那 ParserService.errorToJson 呢？
+
+ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關
+
+```
+  ###
+    前面定義 error.type 預設為 danger，如果自己有設定就覆蓋。
+    最重要的是 return 這段 ， 會將 error 轉成只傳 key 與 陣列內容相符的值 。
+    例如：
+      error = {msg: 'msg', test: 'test'}
+      error 傳進去會回傳  {msg: 'msg', type:'danger'}
+      有發現 test 被略掉了嗎 [?!!]
+  ###
+
+  return JSON.parse(JSON.stringify(error, ['message', 'type', 'inner', 'msg', "params"], 2))
+```
+
+* 小盲點：使用這個方式，我們要怎麼在錯誤的時候任意的回傳我們要的值呢 T______T ？*
 
 ***
 
@@ -70,8 +143,8 @@ test spec 這裡的 error 哪裡來 ？
     # res.body.should.be ....
     # res.body.should.be ....
 ```
-> 沒有用 expect 的話， `(error == null).should.be.true` 都只是像棒球的快樂槍一樣。
-> res.body 就等同於 api controller 中最後所傳的 error / data （包含後續對參數的處理變動）。
+> 沒有用 expect 的話 `(error == null).should.be.true` 只是像棒球的快樂槍一樣。
+> res.body 等同於 api controller 中最後所傳的 error / data （包含後續對參數的處理變動）。
 
 補充：
 
