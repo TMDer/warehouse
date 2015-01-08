@@ -14,10 +14,10 @@
 
 - [解答]
 
-  - [Controller Return res.XXXX ?](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecAndResNote.md#controller-spec)
+  - [Controller Return res.XXXX ?](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecAndResNote.md#controller-return-resxxxx-)
 
   - [Controller Spec](https://github.com/TMDer/warehouse/blob/controllerSpec/codeRules/controllerSpecAndResNote.md#controller-spec)
-***
+
 
 ## 來來來，這些東西你真的搞懂了嗎 ？
 
@@ -29,7 +29,7 @@ res.serverErrorWithSocket error
 res.serverErrorWithSocket ParserService.errorToJson error
 ```
 
-幾個我們系統中常見的 controller 結尾回傳方式，差異在哪裡你知道嗎 ？
+幾個我們系統中常見的 controller 結尾回傳方式，差異是 ？
 
 
 ```
@@ -42,19 +42,29 @@ request(sails.hooks.http.app)
   # res.body.should.be ....
 ```
 
-test spec 這裡的 error, res.body 哪裡來 ？
+controller spec 這裡的 error, res.body 哪裡來 ？
 
 有沒有發現 error 總是 null 呢 ？
 
 #### 如果以上問題能清楚回答，那恭喜你看到這裡就可以了 ～～～～～  YA .
 
-***
+
 
 ## Controller Return res.XXXX ?
 
+回顧一下我們常見的回傳方式，想想其中的差異。
+
+```
+res.ok result
+res.okWithSocket result
+res.serverError error
+res.serverErrorWithSocket error
+res.serverErrorWithSocket ParserService.errorToJson error
+```
+
 簡單說：帶有 Socket 的都是 TMDer 我們自己定義的，意義與名稱一樣就是跟 Socket 有關係，
 
-上面的簡單說的看起來就像廢話一樣，還是直接來看彼此間的結構關係吧。
+上面的簡單說的看起來就像廢話一樣 ...... 還是直接來看彼此間的結構關係吧。
 
 ```
 # Sails 定義 / res.status 也是定義的一部分
@@ -77,7 +87,7 @@ res.okWithSocket(data, viewOrRedirect) ->
 
 > Sails 與 TMDer 定義的差別真的只有一個：sendSocket。
 
-#### 那傳遞進去的用意是 ？
+#### 那傳遞 sendSocket 進去的用意 ？
 
 ```
 res.ok(data, viewOrRedirect, sendSocket = false) ->
@@ -109,7 +119,7 @@ res.serverError(err, viewOrRedirect, sendSocket = false) ->
 
 ####  那 ParserService.errorToJson 呢？
 
-ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關
+ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關。
 
 ```
   ###
@@ -124,9 +134,9 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
   return JSON.parse(JSON.stringify(error, ['message', 'type', 'inner', 'msg', "params"], 2))
 ```
 
-* 小盲點：使用這個方式，我們要怎麼在錯誤的時候任意的回傳我們要的值呢 T______T ？*
+#### 小盲點：使用這個方式，我們要怎麼在錯誤的時候任意的回傳我們要的值呢 T______T ？
 
-***
+
 
 ## Controller Spec
 
@@ -148,20 +158,20 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
 
 補充：
 
-- [Testing controllers](http://sailsjs.org/#/documentation/concepts/Testing?q=testing-controllers)為sails 的文件中簡潔的 Demo ，其中透露了使用的套件。
+- [Testing controllers](http://sailsjs.org/#/documentation/concepts/Testing?q=testing-controllers) 為sails 的文件中簡潔的 Demo ，其中透露了使用的套件。
 
 - [supertest](https://github.com/tj/supertest) 為實際使用的套件，可查閱更多 expect 的用法。
 
-***
+
 
 ## 總結
 
-1. 開立 spec 的時候要確認是否需要於前端顯示，直接影響是否使用 Socket。
+- 開立 spec 的時候要確認是否需要於前端顯示，直接影響是否使用 Socket。
 
-2. spec 最簡單確認成功與否的方式是：
+- spec 最簡單確認成功與否的方式是：
 
 ```
   res.statusCode.should.equal 200 # ok
   res.statusCode.should.equal 500 # error
 ```
-3. 沒有 expect 就不要在對 `.end (error, res)` 中的error下 should 條件。
+- 沒有 expect 就不要在對 `.end (error, res)` 中的error下 should 條件。
