@@ -141,7 +141,13 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
   return JSON.parse(JSON.stringify(error, ['message', 'type', 'inner', 'msg', "params"], 2))
 ```
 
-#### 小盲點：使用這個方式，我們要怎麼在錯誤的時候任意的回傳我們要的值呢 T______T ？
+### 小結
+
+沒有特別要回傳其他值時使用 `ParserService.errorToJson` 篩選出需要的訊息即可，
+
+反之，需要回傳其他值時，對於 socket 所需顯示的訊息和格式就需要自行定義。
+
+補充：客製化的 message 則在 `linker/js/common/notice/app.coffee` 調整。
 
 
 
@@ -160,7 +166,7 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
     # res.body.should.be ....
     # res.body.should.be ....
 ```
-> 沒有用 expect 的話 `(error == null).should.be.true` 只是像棒球的快樂槍一樣。
+> 沒有用 expect 的話 erorr 就只可能是 null ， 而 `(error == null).should.be.true` 就像棒球的快樂槍一樣。
 
 > res.body 等同於 api controller 中最後所傳的 error / data （包含後續對參數的處理變動）。
 
