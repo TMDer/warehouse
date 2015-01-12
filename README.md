@@ -15,7 +15,7 @@ gem install jekyll
 
 ```
 git clone -b gh-pages https://github.com/TMDer/warehouse.git
-jekyll serve
+jekyll serve --config _local_config.yml
 open http://localhost:4000
 ```
 
