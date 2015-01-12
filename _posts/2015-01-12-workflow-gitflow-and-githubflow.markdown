@@ -5,6 +5,8 @@ date:   2015-01-12 12:36:07
 categories: jekyll update
 ---
 
+![](http://s3.amazonaws.com/rapgenius/filepicker%2FEMADv4TRB26cYmN3gyg7_flow.jpg)
+
 ## 我們的做法
 
 gitflow 與 code review 太繁瑣，所以無法確保程式品質，因此我們改為 githubflow，並且每個禮拜發布一次，確保開發步奏的循環。
