@@ -3,8 +3,8 @@ title: Warehouse - TMD Team
 email: tmd@hiiir.com
 description: > # this means to ignore newlines until "baseurl:"
   Tech, Infra, Do the right thing, that is what we are doing.
-baseurl: "/warehouse/" # the subpath of your site, e.g. /blog/
-url: "http://www.github.com/tmder" # the base hostname & protocol for your site
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "http://tmder.github.io/warehouse/" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 # twitter_username: jekyllrb
