@@ -5,10 +5,13 @@ code warehouse
 
 ### codeRules
 
-### codeStyles  
-- coffeescript  
-- jade  
-- sass  
+### codeStyles
+- coffeescript
+- jade
+- sass
+
+### knowledge
+- bower
 
 ### tips
 - git
