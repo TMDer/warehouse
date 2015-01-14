@@ -12,6 +12,7 @@ code warehouse
 
 ### knowledge
 - bower
+- package(npm)
 
 ### tips
 - git
