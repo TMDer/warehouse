@@ -14,9 +14,9 @@
 
 - [解答]
 
-  - [Controller Return res.XXXX ?](https://github.com/TMDer/warehouse/blob/codeRules/controllerSpecAndResNote.md#controller-return-resxxxx-)
+  - [Controller Return res.XXXX ?](https://github.com/TMDer/warehouse/blob/master/codeRules/controllerSpecAndResNote.md#controller-return-resxxxx-)
 
-  - [Controller Spec](https://github.com/TMDer/warehouse/blob/codeRules/controllerSpecAndResNote.md#controller-spec)
+  - [Controller Spec](https://github.com/TMDer/warehouse/blob/master/codeRules/controllerSpecAndResNote.md#controller-spec)
 
 
 ## 來來來，這些東西你真的搞懂了嗎 ？
