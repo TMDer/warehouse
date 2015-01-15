@@ -5,6 +5,8 @@ date:   2015-01-15 17:36:07
 categories: work
 ---
 
+![](http://www.cypressnorth.com/wp-content/uploads/2012/09/catchAllTheErrors-615x461.png)
+
 # Error 訊息處理流程
 
 ###說明
