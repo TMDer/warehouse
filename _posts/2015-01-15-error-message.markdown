@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Error message 處理方式
-date:   2015-01-12 12:36:07
+date:   2015-01-15 17:36:07
 categories: work
 ---
 
@@ -17,7 +17,7 @@ categories: work
 #####1.使用以下方法產生錯誤訊息
 
 ```
-  new Error("userId is required") 
+  new Error("userId is required")
 ```
 
 使用這個方式的錯誤，可產生如下提示
@@ -35,7 +35,7 @@ categories: work
   ParserService.errorToJson(error)
 透過這個方法可將 error 轉換爲 pmd 常用的格式，如下：
 
-```  
+```
   { message: 'userId is required', type: 'danger' }
 ```
 
