@@ -55,3 +55,7 @@ mysql -uroot -p123456 pmd_platform_test < /Users/Vincent/Desktop/pmd_platform_20
 
 ### 保留 test 後的 Facebook 廣告
 在 test 過程所建立的所有檔案，由於只是測試用途，在結束 test 後會呼叫清除程序，將之清除，若在測試完後想保留 Facebook 上的廣告，可在 `test/init/after.coffee` 裏面，`AdCampaignService.cleanAllFbCampaign_danger_only4Test` 之前直接呼叫 `app.lower done` ，可避免 Facebook 上的廣告被清除。
+
+### 將環境設為 production
+
+目前預設在我們本機的`pmd_platform/config/local.coffee`預設環境是 `developement`，但為了在本機測試在正式機的運作流程，就必須將環境變成 `production`，可以將 `environment`的值設定為`production`即可。
