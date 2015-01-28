@@ -6,13 +6,15 @@
 
 - 修改相關檔案
 
-```
-config/bootstrap.coffee  - 套件的基本配置
-config/http.coffee - 自定義的 middleware
-api/services/UserService.coffee - 對 db 的處理
-api/controllers/AuthController.coffee - login成功時的處理
 
-```
+  - [config/bootstrap.coffee](https://github.com/TMDer/warehouse/blob/master/implement/RememberMe.md#-configbootstrapcoffee)  - 套件的基本配置
+
+  - [config/http.coffee](https://github.com/TMDer/warehouse/blob/master/implement/RememberMe.md#-confighttpcoffee) - 自定義的 middleware
+
+  - [api/services/UserService.coffee](https://github.com/TMDer/warehouse/blob/master/implement/RememberMe.md#-apiservicesuserservicecoffee) - 對 db 的處理
+
+  - [api/controllers/AuthController.coffee](https://github.com/TMDer/warehouse/blob/master/implement/RememberMe.md#-apicontrollersauthcontrollercoffee) - login成功時的處理
+
 
 
 ## 流程
@@ -20,6 +22,8 @@ api/controllers/AuthController.coffee - login成功時的處理
 
 - cookie 用來存驗證的token
 - session 用來存放後端系統所需的資料（例如：使用者、adAccount)
+
+> 流程圖為 [Mak](https://github.com/malikid) 繪製
 
 
 ## 實作
