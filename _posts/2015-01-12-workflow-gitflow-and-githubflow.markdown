@@ -3,9 +3,9 @@ layout: post
 title:  "開發團隊的 github flow 標準流程"
 date:   2015-01-12 12:36:07
 categories: work flow
+tags: work flow
+image: http://s3.amazonaws.com/rapgenius/filepicker%2FEMADv4TRB26cYmN3gyg7_flow.jpg
 ---
-
-![](http://s3.amazonaws.com/rapgenius/filepicker%2FEMADv4TRB26cYmN3gyg7_flow.jpg)
 
 ## 我們的做法
 
