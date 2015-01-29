@@ -2,7 +2,7 @@
 layout: post
 title:  "Error message 處理方式"
 date:   2015-01-15 17:36:07
-categories: work
+categories: work flow
 tags: work flow
 image: http://www.cypressnorth.com/wp-content/uploads/2012/09/catchAllTheErrors-615x461.png
 ---

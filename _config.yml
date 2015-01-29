@@ -8,10 +8,10 @@ url: "http://www.github.com/tmder" # the base hostname & protocol for your site
 #blog logo
 logo: "/assets/images/mobius_logo.jpg"
 #blog cover
-cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/warehouse/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 name: 'Mobius'
 author: 'Mobius Ads'
-author_image: "/assets/images/author.jpg"
+author_image: "/warehouse/assets/images/author.jpg"
 paginate: 5
 # Build settings
 highlighter: pygments
