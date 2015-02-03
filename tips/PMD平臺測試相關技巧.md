@@ -59,3 +59,8 @@ mysql -uroot -p123456 pmd_platform_test < /Users/Vincent/Desktop/pmd_platform_20
 ### 將環境設為 production
 
 目前預設在我們本機的`pmd_platform/config/local.coffee`預設環境是 `developement`，但為了在本機測試在正式機的運作流程，就必須將環境變成 `production`，可以將 `environment`的值設定為`production`即可。
+
+最後讓我們將他 `grunt` 起來吧~
+```
+$ grunt prod
+```
