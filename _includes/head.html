@@ -12,7 +12,11 @@
   <meta name="MobileOptimized" content="320" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
+  {% if page.title %}
+  <meta property="og:title" content="{{page.title}}" />
+  <meta property="og:url" content="{{site.url}}{{site.baseurl}}{{page.id}}" />
+  <meta property="og:image" content="{{page.image}}" />
+  {% endif %}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <link rel="shortcut icon" href="{{ "/assets/images/favicon.ico" | prepend: site.baseurl }}">
