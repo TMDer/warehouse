@@ -99,3 +99,9 @@ module.exports.blackbox = (arg) ->
 就算你不寫測試，你的另一半還是會測試。
 
 所以，從今天起，工程師一定要寫『最小化測試』。
+
+## 推薦資料
+
+ * [Learning Web Test with Geb](http://learngeb.readbook.tw/)
+ * [nodejs framework: How to testing sails and loopback](http://blog.smlsun.com/2014/10/nodejs-framework-how-to-testing-sails.html)
+ * [Groovy Tutorial（7）使用 Geb 開發 Web Test 網站自動化測試（上）](http://www.codedata.com.tw/java/groovy-tutorial-7-greb-web-test-part1/)
