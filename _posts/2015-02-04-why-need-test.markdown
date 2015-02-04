@@ -59,7 +59,7 @@ describe “test function start”, (done) ->
 
 最小化實作
 
-```
+```js
 module.exports.blackbox = (arg) ->
     return ...
 ```
