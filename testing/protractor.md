@@ -119,6 +119,10 @@ browser.sleep(1500)
 ### 參考資料
 
  * [Protractor 參考範例](https://github.com/angular/protractor/tree/master/example)
+ * [Protractor - 環境設定篇](https://www.facebook.com/notes/paul-li/protractor-%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E7%AF%87/10152948608982211?pnref=lhc)
+ * [Protractor - 實戰篇 - Config File](https://www.facebook.com/notes/paul-li/protractor-%E5%AF%A6%E6%88%B0%E7%AF%87-config-file/10152950568012211)
+ * [Protractor - 實戰篇 - Page Objects](https://www.facebook.com/notes/paul-li/protractor-%E5%AF%A6%E6%88%B0%E7%AF%87-page-objects/10152952559442211)
+ * [Protractor - Enhance 篇 - Trouble Shooting](https://www.facebook.com/notes/10152956325467211/)
 
 
 
