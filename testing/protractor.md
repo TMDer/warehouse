@@ -7,6 +7,7 @@
 ```
 npm install -g protractor
 webdriver-manager update
+npm install -g mocha
 ```
 
  * [詳細安裝流程](http://angular.github.io/protractor/#/tutorial)
@@ -20,7 +21,14 @@ exports.config = {
   framework: "mocha",
   seleniumAddress: "http://0.0.0.0:4444/wd/hub",
   capabilities: {
-    browserName: "chrome"
+    browserName: "chrome",
+    // (Optional Start) Set if the path of browser is not default install path.
+    chromeOptions: {
+      binary: "/Applications/Browsers/Google\ Chrome.App/Contents/MacOS/Google\ Chrome",
+      args: [],
+      extensions: [],
+    }
+    // (Optional End)
   },
   specs: ["test/**/*.js"],
   baseUrl: 'http://localhost:' + (process.env.HTTP_PORT || '1337'),
