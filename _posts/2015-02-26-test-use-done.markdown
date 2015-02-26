@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "程式碼錯誤檢測方式，減少使用不必要的 console.log"
+title:  "除錯錦囊妙計第一步，減少使用不必要的 console.log"
 date:   2015-02-26 12:36:07
 categories: warehouse work flow
 tags: work flow
