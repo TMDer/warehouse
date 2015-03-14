@@ -122,6 +122,11 @@
 - `geo_markets`
 - `location_types`
 
+### Targeting
+`CBT (Broad Category Targeting)`
+`friends_of_connections`
+`targeting`
+
 --------
 
 # 整理
@@ -132,5 +137,23 @@
 2. 將原先在 Ad Group 內的 `Bid` (bid_type 與 bid_info) 的設定移動到 Ad Set 內。
 3. 增加 `is_autobid` (讓 Facebook 爽爽花你的錢？) 設定，另外想開啓這個欄位， Ad Campaign 的 Objective 不得設爲 NONE。
 4. 將原先在 Ad Group 內的 `Targeting` 的設定移動到 Ad Set 內。
-5. 在 Targeting 內的 `Location` ，新增更多參數。
-6. 在 Ad Set 內新增 `promoted_object` ，在特定的 Objective 這個欄位是必須的。
+5. `Targeting` 的 user_os 可以詳細到系統版本。
+6. 在 Targeting 內的 `Location` ，新增更多參數。
+7. `Targeting` 增加 `friends_of_connections` 對朋友的連結
+8. `Targeting` 增加 `CBT (Broad Category Targeting) ` 自訂叢集建立、管理帳號
+9. `Targeting` 新增 `Flexible targeting` ，為彈性的 `Targeing` 利用 and, or 的概念傳輸受眾資料
+10. 在 Ad Set 內新增 `promoted_object` ，在特定的 Objective 這個欄位是必須的。
+
+
+# Promoted_Object
+
+當你的 Campaign 是是以下 Objective 需要帶有 Promoted_Object 屬性
+
+- WEBSITE_CONVERSIONS
+- PAGE_LIKES
+- OFFER_CLAIMS
+- MOBILE_APP_INSTALLS
+- CANVAS_APP_INSTALLS
+- MOBILE_APP_ENGAGEMENT
+- CANVAS_APP_ENGAGEMENT
+
