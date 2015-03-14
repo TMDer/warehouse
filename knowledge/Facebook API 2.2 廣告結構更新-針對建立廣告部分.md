@@ -125,7 +125,7 @@
 ### Targeting
 - `CBT (Broad Category Targeting)`
 - `friends_of_connections`
-- `targeting`
+- `promoted_object`
 
 --------
 
