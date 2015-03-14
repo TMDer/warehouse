@@ -123,9 +123,9 @@
 - `location_types`
 
 ### Targeting
-`CBT (Broad Category Targeting)`
-`friends_of_connections`
-`targeting`
+- `CBT (Broad Category Targeting)`
+- `friends_of_connections`
+- `targeting`
 
 --------
 
