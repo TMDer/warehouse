@@ -94,6 +94,8 @@
 - lifetime_budget
 - start_time
 - end_time
+- pacing_type
+- campaign_schedule
 - redownload
 		
 ### Ad: (原名稱爲 Ad Group)
