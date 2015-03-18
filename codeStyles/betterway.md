@@ -21,4 +21,5 @@ if changeStatusIsAllow
 
  * [http://jsperf.com/js-lodash-indexof](http://jsperf.com/js-lodash-indexof)
 
+## 有沒有更好的方法！？
 
