@@ -4,8 +4,7 @@
 | [sails](http://sailsjs.org/) | node.js MVC Framework |
 | [sails-disk](https://github.com/balderdashy/sails-disk) | 本地端的資料庫配置 |
 | [sails-generate-views-jade](https://github.com/balderdashy/sails-generate-views-jade) | 將 sails 使用的 jade template 生成 view |
-| [sails-migrations](https://github.com/BlueHotDog/sails-migrations) | 管理 db 的遷移，基於 [knex lib](https://github.com/tgriesser/
-knex)|
+| [sails-migrations](https://github.com/BlueHotDog/sails-migrations) | 管理 db 的遷移，基於 [knex lib](https://github.com/tgriesser/knex)|
 | [sails-mongo](https://github.com/balderdashy/sails-mongo) | 作 mongo 的配置 |
 | [sails-mysql](https://github.com/balderdashy/sails-mysql) | 作 mysql 的配置 |
 | [sails-redis](https://github.com/balderdashy/sails-redis) | Redis 的 Sails / Waterline 插件 |
