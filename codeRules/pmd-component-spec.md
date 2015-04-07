@@ -1,3 +1,4 @@
+
 # Basic Component
 
 ## ::basicButton  
@@ -27,7 +28,7 @@ common.pmdDropdown
 
 
 #### 參數說明
-* items(required): Dropdown Items (Array)
+* items(required): Dropdown Items ，項目不可重複 (Array)
 * pmd-model(required): 目前選擇的項目 (String)
 * pmd-change: 使用者點選後觸發的動作 (Function)
 * defalut-position: 預設顯示的項目 (Int)， default is 0
