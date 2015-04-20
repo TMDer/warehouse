@@ -55,9 +55,18 @@ PS. 相關 test 在上一步驟確認
   - dump / backup production db
   - 更新 production db
 - [ ] production 程式更新 / 發佈
-  - develop merge 到 master
-  - Test by Jenkins
-  - deployed
+  - [ ] develop merge 到 master
+  - [ ] Test by Jenkins
+  - [ ] deployed
+
+### 整合測試負責人
+
+###______________________________________
+
+
+### 整合日期
+
+###______________________________________
 
 
 
