@@ -1,4 +1,5 @@
 
+
 # Basic Component
 
 ## ::basicButton  
@@ -29,14 +30,15 @@ common.pmdDropdown
 
 #### 參數說明
 * items(required): Dropdown Items ，項目不可重複 (Array)
-* pmd-model(required): 目前選擇的項目 (String)
+* selected-osition(required): 目前選擇項目的位置 (String)
 * pmd-change: 使用者點選後觸發的動作 (Function)
 * defalut-position: 預設顯示的項目 (Int)， default is 0
+* disabled: 是否要停用這個物件， default is false
    
 #### 使用方式
     
 ```
-    pmd-dropdown(items="dropdownItems", defalut-position="0", pmd-model="dropdownObjectives" pmd-change="dropdownChangeg()")
+    pmd-dropdown(items="trafficValueArgs", defalut-position="0", selected-position="trafficTypePosition" pmd-change="selectedWebsiteTraffic(trafficArgs[trafficTypePosition], trafficTypePosition)")
 ```
 
 ## ::pmdInput
@@ -104,6 +106,7 @@ common.pmdCheckbox
 #### 參數說明
 * checkboxData(required): 元件要顯示的物件
 * ngModel(required): 元件被選取後要綁定的變數
+* type: 形狀 round / square
 * pmdChange: 元件變更選取項目時要觸發的方法
 * disableAll: 將此元件變更爲不可選取狀態
 
