@@ -12,6 +12,15 @@ npm install -g mocha
 
  * [詳細安裝流程](http://angular.github.io/protractor/#/tutorial)
 
+# update
+
+如果遇到驅動程式問題可以使用更新。
+
+```
+npm update -g protractor
+webdriver-manager update
+```
+
 #prepare
 
 所有的設定都是透過 `protractor.conf.js` ，透過 specs 可以增加 protractor 要執行的檔案，透過這樣子的流程可以順利進行調整。
