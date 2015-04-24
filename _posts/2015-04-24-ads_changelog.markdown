@@ -4,7 +4,7 @@ title:  "Facebook Ads API 2.3 重要變更"
 date:   2015-04-24 12:36:07
 categories: warehouse work flow
 tags: work flow
-image: https://contentequalsmoney.com/wp-content/uploads/media/2013/10/facebook-api-.jpg
+image: https://s3.amazonaws.com/infinum.web.production/repository_items/files/000/000/488/original/facebook-api1.png?1426623498
 ---
 
 ## Facebook Ads API 2.3 重要變更
