@@ -4,7 +4,7 @@ title:  "Facebook Ads API 2.3 重要變更"
 date:   2015-04-24 12:36:07
 categories: warehouse work flow
 tags: work flow
-image: https://s3.amazonaws.com/infinum.web.production/repository_items/files/000/000/488/original/facebook-api1.png?1426623498
+image: https://contentequalsmoney.com/wp-content/uploads/media/2013/10/facebook-api-.jpg
 ---
 
 ## Facebook Ads API 2.3 重要變更
@@ -12,7 +12,7 @@ image: https://s3.amazonaws.com/infinum.web.production/repository_items/files/00
 目前 2.2 API 版本可以使用至 `2015/07/08` ，之後將正式啟用 API 2.3 ，總項目修改細節歸納如下，
 
 
-### `objective` 變革
+### objective 變革
 
 `objective` 現在只存在 Ad Campaign 內，以往是可以再透過 Ad Group 設定，接下來 2.3 改版之後將無法使用。
 
