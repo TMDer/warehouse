@@ -133,6 +133,18 @@ browser.sleep(1500)
 
  * [should spec](http://shouldjs.github.io/)
 
+### 錯誤訊息參考
+
+```
+UnknownError: unknown error: Element is not clickable at point (868, 788). Other element would receive the click: <div id="audience-included" class="last-time mui-input">...</div>
+```
+
+```
+ElementNotVisibleError: element not visible
+```
+
+當碰到以上的錯誤訊息, 請注意你所選擇的按鈕是否能被點擊 (可能會有z-index的問題), 因為`Protractor`是去模擬滑鼠的動作, 所以當點擊不到就會有可能發生錯誤。 
+
 ### 參考資料
 
  * [Protractor 參考範例](https://github.com/angular/protractor/tree/master/example)
