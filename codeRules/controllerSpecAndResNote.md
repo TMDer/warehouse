@@ -21,7 +21,7 @@
 
 ## 來來來，這些東西你真的搞懂了嗎 ？
 
-```
+```javascript
 res.ok result
 res.okWithSocket result
 res.serverError error
@@ -32,7 +32,7 @@ res.serverErrorWithSocket ParserService.errorToJson error
 - 幾個我們系統中常見的 controller 結尾回傳方式，差異是 ？
 
 
-```
+```javascript
 request(sails.hooks.http.app)
 .post(“/controller/function/")
 .send(params).end (error, res)->
@@ -54,7 +54,7 @@ request(sails.hooks.http.app)
 
 回顧一下我們常見的回傳方式，想想其中的差異。
 
-```
+```javascript
 res.ok result
 res.okWithSocket result
 res.serverError error
@@ -66,7 +66,7 @@ res.serverErrorWithSocket ParserService.errorToJson error
 
 上面的簡單說的看起來就像廢話一樣 ...... 還是直接來看彼此間的結構關係吧。
 
-```
+```javascript
 # Sails 定義 / res.status 也是定義的一部分
 res.serverError(err, viewOrRedirect, sendSocket = false) ->
 
@@ -94,7 +94,7 @@ res.okWithSocket(data, viewOrRedirect) ->
 
 #### 那傳遞 sendSocket 進去的用意 ？
 
-```
+```javascript
 res.serverError(err, viewOrRedirect, sendSocket = false) ->
 
   if sendSocket
@@ -128,7 +128,7 @@ res.ok(data, viewOrRedirect, sendSocket = false) ->
 
 ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關。
 
-```
+```javascript
   ###
     前面定義 error.type 預設為 danger，如果自己有設定就覆蓋。
     最重要的是 return 這段 ， 會將 error 轉成只傳 key 與 陣列內容相符的值 。
@@ -155,7 +155,7 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
 
 前情提要： `.end (error, res)` 的 error 為何總是 null / res.body 是什麼？
 
-```
+```javascript
   request(sails.hooks.http.app)
   .post(“/controller/function/")
   .send(params)
@@ -184,7 +184,7 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
 
 - spec 最簡單確認成功與否的方式是：
 
-```
+```javascript
   res.statusCode.should.equal 200 # ok
   res.statusCode.should.equal 500 # error
 ```
