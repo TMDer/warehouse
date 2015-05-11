@@ -87,7 +87,7 @@ res.okWithSocket(data, viewOrRedirect) ->
 
 > Sails 與 TMDer 定義的差別真的只有一個：sendSocket。
 
-#### 那傳遞 sendSocket 進去的用意 ？
+#### :: 延伸一：那傳遞 sendSocket 進去的用意 ？
 
 ```javascript
 res.serverError(err, viewOrRedirect, sendSocket = false) ->
@@ -119,18 +119,11 @@ res.ok(data, viewOrRedirect, sendSocket = false) ->
 反之，需要在前端 show 出訊息則使用 ` res.serverErrorWithSocket &&  res.okWithSocket `。
 
 
-####  那 ParserService.errorToJson 呢？
+####  ::  延伸二：那 ParserService.errorToJson 呢？
 
-請參考與[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關。
+[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關。
 
-
-### 小結
-
-沒有特別要回傳其他值時使用 `ParserService.errorToJson` 篩出需要的訊息格式即可，
-
-反之，需要回傳其他值時，對於 socket 所需顯示的訊息和格式就需要自行定義。
-
-
+* * *
 
 ## Controller Spec  --  `.end (error, res)` 的 error 為何總是 null？
 
