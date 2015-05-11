@@ -30,7 +30,7 @@ res.serverErrorWithSocket error
 res.serverErrorWithSocket ParserService.errorToJson error
 ```
 
-### Q2 controller spec 這裡的 error, res.body 哪裡來 ？ 有沒有發現 error 總是 null？
+### Q2 controller spec 有沒有發現 error 總是 null？
 
 ```javascript
 request(sails.hooks.http.app)
@@ -121,32 +121,18 @@ res.ok(data, viewOrRedirect, sendSocket = false) ->
 
 ####  那 ParserService.errorToJson 呢？
 
-ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關。
+請參考與[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關。
 
-```javascript
-  ###
-    前面定義 error.type 預設為 danger，如果自己有設定就覆蓋。
-    最重要的是 return 這段 ， 會將 error 轉成只傳 key 與 陣列內容相符的值 。
-    例如：
-      error = {msg: 'msg', test: 'test'}
-      error 傳進去會回傳  {msg: 'msg', type:'danger'}
-      有發現 test 被略掉了嗎 [?!!]
-  ###
-
-  return JSON.parse(JSON.stringify(error, ['message', 'type', 'inner', 'msg', "params"], 2))
-```
 
 ### 小結
 
-沒有特別要回傳其他值時使用 `ParserService.errorToJson` 篩選出需要的訊息即可，
+沒有特別要回傳其他值時使用 `ParserService.errorToJson` 篩出需要的訊息格式即可，
 
 反之，需要回傳其他值時，對於 socket 所需顯示的訊息和格式就需要自行定義。
 
 
 
-## Controller Spec
-
-前情提要： `.end (error, res)` 的 error 為何總是 null / res.body 是什麼？
+## Controller Spec  --  `.end (error, res)` 的 error 為何總是 null？
 
 ```javascript
   request(sails.hooks.http.app)
@@ -159,7 +145,7 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
     # res.body.should.be ....
     # res.body.should.be ....
 ```
-> 沒有用 expect 的話 erorr 就只可能是 null ， 而 `(error == null).should.be.true` 就像棒球的快樂槍一樣。
+> 沒有用 expect 的話 erorr 就只可能是 null 。
 
 > res.body 等同於 api controller 中最後所傳的 error / data （包含後續對參數的處理變動）。
 
