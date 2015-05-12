@@ -13,7 +13,7 @@ assets - 前端 services
     - ∟ fonts - 字型檔
     - ∟ js - 放置 coffee-script 檔
     - ∟ styles - 放置 .scss/.css 檔
-   - ∟ template - 由 angular 控制的動態版型(.jade)  
+    - ∟ template - 由 angular 控制的動態版型(.jade)  
    
 config - Server 各項設定  
 queue - (無)  
@@ -41,10 +41,10 @@ views - 網頁靜態版型
 **後端所使用的基本 web-framework**
 
 ## [bower](http://bower.io/)
-** 前端套件管理工具 **
+**前端套件管理工具**
 
 ## [npm](https://www.npmjs.com/)
-** 後端套件管理工具 **
+**後端套件管理工具**
 
 ## [grunt](http://gruntjs.com/)
 **排程管理**
