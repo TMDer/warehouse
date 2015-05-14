@@ -3,7 +3,7 @@
 
 ### ::簡介
 
-在開發 PMD 的時候，如果是前端頁面，會有 Jade 檔案(View)，以及跟這個 Jade 檔有關的 Coffee 檔案 (Controller)，通常遇到很明確的狀況，例如一個 Input，理應是屬於 View 的範疇，而這個 Input 內容若有變更要進行處裏，則屬於 Controller 的範疇，因此通常會把單純跟顯示在畫面上有關的事物放入 View ，而需要邏輯運算則放入 Controller。前端所有的 DOM 物件操作，成本極高，需要處處計較。總歸一句，把 Controller 與 View 做出正確的切割，以及降低操作 DOM 物件，或是降低操作 DOM 物件帶來的影響，都是在提升順暢度，進而提升使用者體驗非常重要的一環。關於此文件的由來，請參考 [612 PR](http://gitlab.hq.hiiir/pmd_groups/pmd_platform/merge_requests/612) 與 [630 PR](http://gitlab.hq.hiiir/pmd_groups/pmd_platform/merge_requests/630)，以上所遇到的問題，主要與切割 View  Controller ，以及降低前端 DOM 物件操作的影響相關聯。
+在開發 PMD 的時候，如果是前端頁面，會有 Jade 檔案(View)，以及跟這個 Jade 檔有關的 Coffee 檔案 (Controller)，通常遇到很明確的狀況，例如一個 Input，理應是屬於 View 的範疇，而這個 Input 內容若有變更要進行處裏，則屬於 Controller 的範疇，因此通常會把單純跟顯示在畫面上有關的事物放入 View ，而需要邏輯運算則放入 Controller。前端所有的 DOM 物件操作，成本極高，需要處處計較。總歸一句，把 Controller 與 View 做出正確的切割，以及降低操作 DOM 物件，或是降低操作 DOM 物件帶來的影響，都是在提升順暢度，進而提升使用者體驗非常重要的一環。以上所遇到的問題，主要與切割 View  Controller ，以及降低前端 DOM 物件操作的影響相關聯。
 
 ### ::View 與 Controller 劃分
 
