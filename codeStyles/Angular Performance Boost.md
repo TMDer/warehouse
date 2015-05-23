@@ -96,7 +96,29 @@
 很多東想買，只買必要的就好 ! 每個被 Angular Two-Way Binding 的變數，會一直在整個生命週期內不斷的去 Watch，但是有很多東西只要經過邏輯後顯示到畫面上，就不需要及時性的更新，例如，員工系統內的員工資料總覽，每個員工的資料只要顯示在畫面上就不可能會被更改(就算改動了也沒有及時更新的必要性)，但畫面上這樣的資料或許有一百筆，是從變數拉過來顯示的，只要透過 One-Time Binding ，一旦正確取得員工資料並且被 Binding 到畫面上對應的變數，這個 Binding 關係會立刻消失，畫面也會顯示正確的資料，並且也不再需要持續的去 Watch 這個變數。
 
 ### ::藥方 (已經先試喝過)
->未完成
+無息分期的 `limitTo` :
+因爲 DOM 物件的操作實在是太貴了，我們也沒辦法送給我們尊貴的客戶一人一臺 Macbook Por 頂規，Angular 更不打算給我們折扣，就只好分期付款了。在使用 ngRepeate 的時候，設定 limitTo 參數，可讓前端顯示的部分有上限，且這個設定可以 binding 到一個變數，動態的更動這個上限，這裏有一個特性，limitTo 只對畫面有影響，對邏輯與資料本身不影響。換句話說， limitTo 多少，畫面在 render 的時候就會顯示多少筆，被 binding 的變數不會被更動。由於第一次載入畫面的筆數比較少，畫面很快就會出來了，使用者體驗就可以提升。待畫面看起來`似乎`已經顯示完成後，再把 limitTo 上限提高，便可以把剩餘的資料顯示出來。
+
+前端範例:
+
+```
+tr(ng-repeat="adCampaign in $data | limitTo: generalAdsShowLimit track by adCampaign.campaign_id", ng-class="{'active': adCampaign.checked}")
+...
+ ```
+ 
+後端範例:
+
+```
+$scope.init = ->
+
+	$scope.generalAdsShowLimit = 9
+	
+	setTimeout () ->
+		$scope.generalAdsShowLimit = 50
+	, 200
+
+```
+
 
 ### ::註解
 1. track by，節錄自官方 Document
