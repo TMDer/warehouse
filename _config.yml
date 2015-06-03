@@ -3,7 +3,7 @@ title: "Warehouse -  TMD Team"
 email: mobius@hiiir.com
 description: > # this means to ignore newlines until "baseurl:"
   Tech, Infra, Do the right thing, that is what we are doing.
-baseurl: "/warehouse/" # the subpath of your site, e.g. /blog/
+baseurl: "/warehouse" # the subpath of your site, e.g. /blog/
 url: "http://tmder.github.io" # the base hostname & protocol for your site
 #blog logo
 logo: "/assets/images/mobius_logo.jpg"
