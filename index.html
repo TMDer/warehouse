@@ -10,7 +10,7 @@ layout: default
 
 <header class="blog-header">
     {% if site.logo %}
-      <a class="blog-logo" href="{{ site.baseurl }}{{site.url}}" style="background-image: url('{{ site.baseurl }}{{ site.logo }}')">{{ site.title }}</a>
+      <a class="blog-logo" href="{{site.baseurl}}" style="background-image: url('{{site.url}}{{ site.baseurl }}{{ site.logo }}')">{{ site.title }}</a>
     {% endif %}
     <h1 class="blog-title">{{ site.title }}</h1>
     <h2 class="blog-description">{{ site.description }}</h2>
