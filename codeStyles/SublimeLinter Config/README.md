@@ -35,6 +35,6 @@ Perferenaces > Package Setting > SublimeLinter > Setting User
 
 ```
 "gutter_theme": "Packages/SublimeLinter/gutter-themes/Blueberry/cross/Blueberry - cross.gutter-theme"
-mark_style: 'fill'
+"mark_style": "fill"
 "no_column_highlights_line": true
 ```
