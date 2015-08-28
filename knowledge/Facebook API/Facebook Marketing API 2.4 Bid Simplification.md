@@ -1,7 +1,7 @@
-# Facebook Marketing API 2.4 出價方式變更
+# Facebook Marketing API 2.4 Bid Simplification
 
 ## 說明
-以前的出價方式與 API 對應不上容易誤導，所以重新設計 API 的出價設定讓他更直觀與簡單。
+以前的出價方式與 API 對應不上容易誤導，所以 Facebook 重新設計 API 的出價設定讓他更直觀與簡單。
 
 ## 變更
 1. 移除 `bid_info` 與 `bid_type` 兩個欄位寫入方式。
