@@ -28,4 +28,4 @@
 13. Set 內的 `DAILY_BUDGET` `BUDGET_REMAINING` `LIFETIME_BUDGET` 從 uint32 改爲數字型的字串
 
 ## 結論
-主要就是改動 Click 的計算規則，與出價方式。從花錢林貝是大爺的力場來說，就是漲價了嘛。
+主要就是改動 Click 的計算規則，與出價方式。從花錢林貝是大爺的立場來說，就是漲價了嘛。
