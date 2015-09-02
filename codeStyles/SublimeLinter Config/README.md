@@ -43,9 +43,7 @@
 
 ## Sublimelinter 設定
 
-路徑：
-
-`Perferenaces > Package Setting > SublimeLinter > Setting User`
+路徑 →  `Perferenaces > Package Setting > SublimeLinter > Setting User`
 
 | 欄位 | 建議設定 |
 |---|---|
