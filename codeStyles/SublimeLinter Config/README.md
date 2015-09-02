@@ -41,7 +41,20 @@
 
 > 來源：https://github.com/benedfit/SublimeLinter-contrib-jade-lint
 
+## Sublimelinter 設定
+
+路徑：
+
+`Perferenaces > Package Setting > SublimeLinter > Setting User`
+
+| 欄位 | 建議設定 |
+|---|---|
+| gutter_theme | Packages/SublimeLinter/gutter-themes/Blueberry/cross/Blueberry - cross.gutter-theme |
+| mark_style | fill |
+| no_column_highlights_line | true |
+
 ## 參考
 
-1. coffeelint： http://www.coffeelint.org/
-2. scss-lint： https://github.com/brigade/scss-lint
+1. SublimeLinter：http://www.sublimelinter.com/en/latest/about.html
+2. coffeelint： http://www.coffeelint.org/
+3. scss-lint： https://github.com/brigade/scss-lint
