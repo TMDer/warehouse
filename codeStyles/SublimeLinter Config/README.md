@@ -24,7 +24,7 @@
 4. 執行 gem install scss_lint
 5. 複製 Default.scss-lint.yml 內容 → [Link](https://github.com/TMDer/warehouse/blob/master/codeStyles/SublimeLinter%20Config/Default.scss-lint.yml)
 6. 專案根目錄新增 .scss-lint.yml 並貼上剛才複製的內容
-7. 執行 scss-lint ~/workspace/pmd_platform/assets/linker/styles/*\*/\*.scss --config .scss-lint.yml
+7. 執行 `scss-lint ~/workspace/pmd_platform/assets/linker/styles/*\*/\*.scss --config .scss-lint.yml`
 8. 重開 Sublime
 
 > 來源：https://github.com/attenzione/SublimeLinter-scss-lint
