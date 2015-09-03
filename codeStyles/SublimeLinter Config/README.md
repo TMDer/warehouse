@@ -1,18 +1,17 @@
 ## 安裝 Sublimelinter (Install Linter for Sublime)
 
 1. 開啟 Sublime Package
-2. 搜尋 Sublimtelinter 並安裝
+2. 搜尋 Sublimelinter 並安裝
 
 ## 安裝 CoffeeLinter (Install Coffeescript's linter)
 
 1. 開啟 Sublime Package
-2. 搜尋 Sublimelinter 並安裝
-3. 搜尋 Sublimelinter-coffeelint 並安裝
-4. 開啟 terminal
-5. 執行 npm install -g coffeelint
-6. 複製 Default.coffeelint.json 內容 → [Link](https://github.com/TMDer/warehouse/blob/master/codeStyles/SublimeLinter%20Config/Default.coffeelint.json)
-7. 專案根目錄新增 coffeelint.json 並貼上剛才複製的內容
-8. 重開 Sublime
+2. 搜尋 Sublimelinter-coffeelint 並安裝
+3. 開啟 terminal
+4. 執行 npm install -g coffeelint
+5. 複製 Default.coffeelint.json 內容 → [Link](https://github.com/TMDer/warehouse/blob/master/codeStyles/SublimeLinter%20Config/Default.coffeelint.json)
+6. 專案根目錄新增 coffeelint.json 並貼上剛才複製的內容
+7. 重開 Sublime
 
 > 來源：https://github.com/SublimeLinter/SublimeLinter-coffeelint
 
@@ -43,13 +42,24 @@
 
 ## Sublimelinter 設定
 
-路徑 →  `Perferenaces > Package Setting > SublimeLinter > Setting User`
+路徑：
+
+`Perferenaces > Package Setting > SublimeLinter > Setting User`
 
 | 欄位 | 建議設定 |
 |---|---|
 | gutter_theme | Packages/SublimeLinter/gutter-themes/Blueberry/cross/Blueberry - cross.gutter-theme |
 | mark_style | fill |
 | no_column_highlights_line | true |
+
+## 問題排除
+
+| 問題 | 解決方式 |
+|---|---|
+| coffeelint 無法正常執行 | 1. 開啟 terminal 執行 which coffeelint <br> 2. 複製搜尋出的路徑 <br> 3. 開啟 Sublimelinter 的 User 設定 [註1] <br> 4. 將 coffeelint 路徑放到 paths > osx [註2] |
+
+* 註1：位置參照 [Sublimelinter 設定](#sublimelinter 設定) 
+* 註2：coffeelint 路徑記得前後加單引號（雙引號也可）
 
 ## 參考
 
