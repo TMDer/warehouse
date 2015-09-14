@@ -17,6 +17,14 @@ Something you have to know, when you want to learn web developer.
  * node.js, [Learn Node.js (free course)](https://www.codeschool.com/courses/real-time-web-with-node-js)
  * jade, [jade template for html](http://jade-lang.com/)
  * sass & compass, [Sass教學手冊](http://sam0512.blogspot.tw/2013/10/sass.html)
+ * 
+
+## Tools
+
+ * [bower](http://bower.io/)
+ * [grunt.js](http://gruntjs.com/)
+ * [gulp.js](http://gulpjs.com/)
+ * [webpack](https://webpack.github.io/)
 
 ##Middle
 
