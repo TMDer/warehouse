@@ -42,17 +42,26 @@
 
 ### basic.scss
 
-我們系統的基本樣式 
+我們系統的基本樣式, 以及可以使用的 @mixin, @extend 等等
 
 ex. 
 
 ```
+// class
 .btn {
   outline: none;
-  &:focus {
-    outline: none;
-  }
 }
+
+// extend
+%btn{
+  outline: none;
+}
+
+// mixin
+@mixin center-block {
+  outline: none;
+}
+
 ```
 
 ### layout.scss
