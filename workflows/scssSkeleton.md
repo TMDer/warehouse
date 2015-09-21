@@ -61,6 +61,8 @@ ex.
 
 ### adminer資料夾
 
+   style/adminer 資料夾結構如同 template
+
 :: common
 
 共用的 lib 或 directive 的 scss
@@ -88,4 +90,4 @@ ex.
 ```
 
 
-style/adminer 資料夾結構如同 template
+
