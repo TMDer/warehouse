@@ -1,33 +1,34 @@
 ## scss 結構調整
 
 * home.scss
-* variables.scss
-* basic.scss
-* layout.scss
+* _variables.scss
+* _basic.scss
+* _layout.scss
 * adminer
+  * _index.scss 
   * adMgmt
-    * admgmt.scss
+    * _admgmt.scss
   * trackMgmt
-    * trackMgmt.scss
+    * _trackMgmt.scss
   * audience
-    * audience.scss
+    * _audience.scss
   * report
-    * report.scss
+    * _report.scss
   * dashboard
-    * dashboard.scss
+    * _dashboard.scss
   * editUserProfile
-    * editUseProfile.scss
+    * _editUseProfile.scss
   * eventLog
-    * eventLog.scss
+    * _eventLog.scss
   * adCreateAndEdit (adCampaign, adCreative, adGroup, adSet)
-    * adCampaign.scss
-    * adCreative.scss
-    * adGroup.scss
-    * adSet.scss
+    * _adCampaign.scss
+    * _adCreative.scss
+    * _adGroup.scss
+    * _adSet.scss
   * user
-    * user.scss
+    * _user.scss
   * common
-    * *.scss
+    * _*.scss
 
 
 ### home.scss
