@@ -19,8 +19,6 @@
     * editUseProfile.scss
   * eventLog
     * eventLog.scss
-  * operator
-    * operator.scss
   * adCreateAndEdit (adCampaign, adCreative, adGroup, adSet)
     * adCampaign.scss
     * adCreative.scss
