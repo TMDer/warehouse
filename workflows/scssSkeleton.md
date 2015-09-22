@@ -57,7 +57,7 @@ ex.
 }
 
 // mixin
-@mixin center-block {
+@mixin center-block() {
   outline: none;
 }
 
