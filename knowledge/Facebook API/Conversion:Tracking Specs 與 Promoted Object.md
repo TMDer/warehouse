@@ -15,13 +15,14 @@ Conversion Specs 跟錢很有關，以下兩個狀況會使用到 Conversion Spe
 ```
 透過這樣告訴 Facebook ：「這個廣告競價的 Action 就是 post_engagement ，而且我說的就是星期天購物裏面要賣阿帕契直升機模型的那篇貼文(Post)。」
 
+總歸一句，一個廣告可以追蹤各式各樣的 Action ，但只有一種是你在乎且願意花錢的 Action ，Conversion Spec 就是告訴 Facebook 哪一種 Action 是你願意多花點取得好成效的，是單選題而且選了不能換，切記阿！
+
 ## 可能跟錢比較沒有關
-Tracking Specs 跟錢比較沒有關，與 Conversion Specs 比起來，只是純計算，記錄廣告的 Action 有多少，但遇到一樣的問題，什麼是 Action ？Tracking Specs 定義的是你想追蹤的 Action ，也因爲跟出價無關，所以就不限制使用什麼出價方式。
+Tracking Specs 跟錢比較沒有關，與 Conversion Specs 比起來，只是純計算，記錄廣告的 Action 有多少，但遇到一樣的問題，什麼是 Action ？Tracking Specs 定義的是你想追蹤的 Action ，也因爲跟出價無關，所以就不限制使用什麼出價方式，而且既然我都要統計 Action ，我可能想知道看了我的貼文廣告 (Post) 後取得正面回應的人數，同事還想知知道接下來 28 天內買了東西 (Checkout) 的 Conversion 是多少，把你想要知道的項目通通放進 Tracking Spec ，最後報表就可以一目瞭然了。
 
 ## 一些小祕密
-Conversion Specs 與 Tracking Specs 兩位好兄弟的關係不太好，同樣的 Specs 只能給某一個人，如果兩邊都放了，只有 Conversion Specs 會有。
-如果想傳入 Conversion Specs 代替預設值，原先 Facebook 產生的 Conversion Specs 會消失，以你傳入的爲主。
-如果是想傳入 Tracking Specs ，則會變成是以附加的方式黏到後面，但對於 NONE 或者是 App Install/Engagement Object 類型又例外。
+Conversion Specs 與 Tracking Specs 其實唯一的差別就是會不會影響你的出價而已，所以放進 Conversion Specs 的項目，會自動的在 Tracking Specs 產生，畢竟沒有追蹤，就沒有(優化)出價。
+
 
 ## 改版後的新 Boss
 Facebook 在更新了三層架構後，在 Ad Set 層級加了一個項目叫 Promoted Object ，而且在某些 Objective 還是必填，以下是必填的 Objective 類型：
@@ -42,13 +43,10 @@ Facebook 在更新了三層架構後，在 Ad Set 層級加了一個項目叫 Pr
 ## 新 Boss 的技能？
 1. 如果是 App 相關 Object，需要先在 Application Settings 內設定相關資料。其中的 object_store_url 必須與你想 Promote 的 App 是同一個，而且素材(Creative)內設定的網址也要一樣。
 2. 如果是跟粉絲專頁(Page) 有關，素材(Creative)內的設定也要一致。
-3. 以上提到的所有東西，包還一個沒提到的 pixel_id ，一定要跟你的帳號有關聯，且你的帳號有足夠的權限，不然就會 GG 。
-4. 這是一個永久性的設定，一旦建立完就不能在更改，但有規則就有例外，pixel_id 沒有這個限制。其餘若真的需要變更。請建立一個新的 Ad Set。
+3. 以上提到的所有東西，包含一個沒提到的 pixel_id (Conversion Pixel) ，一定要跟你的帳號有關聯，且你的帳號有足夠的權限，不然就會 GG 。
+4. 這是一個永久性的設定，一旦建立完就不能在更改，但有規則就有例外，pixel_id (Conversion Pixel) 沒有這個限制。其餘若真的需要變更。請建立一個新的 Ad Set。
 5. 建立好的 Ad Set 不能加入 Promoted Object ，只能建立一個新的。
-6. 有 Promoted Object ，就沒有 Conversion Specs 。
-
-
-
-
+6. 有 Promoted Object ，系統會自動幫忙你設定好 Conversion Specs 。
+7. 其實 Facebook 開始限制廣告的投遞與設定方式，原本的~~非常Beta版本~~開放式架構，你想怎麽玩都可以，但是如同上帝一般的客戶一旦玩壞了，只會說這個東西很爛嚷嚷着要退貨，所以 Facebook 逐步在簡化與限制，讓智商~~不夠高~~如同上帝的客戶就算沒辦法投出有好成效的廣告，但至少不會建立出上面提到會讓恐龍滅絕的廣告...
 
 無關的補充(還沒找到地方放)：10%限制：調整budget不得低於已經花費的 110%

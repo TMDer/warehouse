@@ -11,10 +11,11 @@
 
 	new Error("userId is required") 
 使用這個方式的錯誤，可產生如下提示
-
+```
 	debug: Error: userId is required
 	  at Object.exports.getAllAds (/Users/spooky/projects/hiiir/pmd_platform/api/services/AdTabService.coffee:7:43)
 	  at module.exports.getAllAds (/Users/spooky/projects/hiiir/pmd_platform/api/controllers/	AdMgmtController.coffee:108:18)
+```
 	 
 如此以來便可以清楚知道問題產生的程式與行數，快速找到問題點
 
@@ -25,5 +26,6 @@
 	{ message: 'userId is required', type: 'danger' }
 除了有特定的需求，建議盡量使用此格式，前端收到這個格式的錯誤，也可以很方便的顯示在畫面上。
 
-####3.使用 console.error
-如果在程式內需要將 error log 出來，可使用 console.error 代替 console.log ，這樣的訊息可以更明顯知道是錯誤，也會更容易找到訊息位置。
+####3.使用 tracer.error
+後端 log error 統一使用 tracer.error , 除了顏色明顯以外，也會顯示錯誤位置，方便 debug
+。

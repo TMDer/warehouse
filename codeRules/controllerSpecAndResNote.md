@@ -19,9 +19,10 @@
   - [Controller Spec](https://github.com/TMDer/warehouse/blob/master/codeRules/controllerSpecAndResNote.md#controller-spec)
 
 
-## 來來來，這些東西你真的搞懂了嗎 ？
+## 來來來，這些東西真的搞懂了嗎 ？
 
-```
+### Q1 幾個我們系統中常見的 controller 結尾回傳方式，差異是 
+```javascript
 res.ok result
 res.okWithSocket result
 res.serverError error
@@ -29,10 +30,9 @@ res.serverErrorWithSocket error
 res.serverErrorWithSocket ParserService.errorToJson error
 ```
 
-- 幾個我們系統中常見的 controller 結尾回傳方式，差異是 ？
+### Q2 controller spec 有沒有發現 error 總是 null？
 
-
-```
+```javascript
 request(sails.hooks.http.app)
 .post(“/controller/function/")
 .send(params).end (error, res)->
@@ -42,9 +42,6 @@ request(sails.hooks.http.app)
   # res.body.should.be ....
 ```
 
-- controller spec 這裡的 error, res.body 哪裡來 ？
-
-- 有沒有發現 error 總是 null 呢 ？
 
 #### 如果以上問題能清楚回答，那恭喜你看到這裡就可以了 ～～～～～  YA .
 
@@ -54,7 +51,7 @@ request(sails.hooks.http.app)
 
 回顧一下我們常見的回傳方式，想想其中的差異。
 
-```
+```javascript
 res.ok result
 res.okWithSocket result
 res.serverError error
@@ -62,12 +59,10 @@ res.serverErrorWithSocket error
 res.serverErrorWithSocket ParserService.errorToJson error
 ```
 
-簡單說：帶有 Socket 的都是 TMDer 我們自己定義的，意義與名稱一樣就是跟 Socket 有關係，
+簡單說：帶有 Socket 的都是我們自己定義的，意義與名稱一樣就是跟 Socket 有關係，直接來看彼此間的結構關係吧。
 
-上面的簡單說的看起來就像廢話一樣 ...... 還是直接來看彼此間的結構關係吧。
-
-```
-# Sails 定義 / res.status 也是定義的一部分
+```javascript
+## Sails 定義 / res.status 也是定義的一部分 ##
 res.serverError(err, viewOrRedirect, sendSocket = false) ->
 
   res.status = 500
@@ -80,7 +75,7 @@ res.ok(data, viewOrRedirect, sendSocket = false) ->
 
 
 
-# TMDer 定義
+## TMDer 定義 ##
 res.serverErrorWithSocket(err, viewOrRedirect) ->
 
   @res.serverError(err, viewOrRedirect, true)
@@ -92,9 +87,9 @@ res.okWithSocket(data, viewOrRedirect) ->
 
 > Sails 與 TMDer 定義的差別真的只有一個：sendSocket。
 
-#### 那傳遞 sendSocket 進去的用意 ？
+#### :: 延伸一：那傳遞 sendSocket 進去的用意 ？
 
-```
+```javascript
 res.serverError(err, viewOrRedirect, sendSocket = false) ->
 
   if sendSocket
@@ -124,38 +119,15 @@ res.ok(data, viewOrRedirect, sendSocket = false) ->
 反之，需要在前端 show 出訊息則使用 ` res.serverErrorWithSocket &&  res.okWithSocket `。
 
 
-####  那 ParserService.errorToJson 呢？
+####  ::  延伸二：那 ParserService.errorToJson 呢？
 
-ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關。
+[codeRules/Error訊息處理流程](https://github.com/TMDer/warehouse/blob/master/codeRules/Error%20%E8%A8%8A%E6%81%AF%E8%99%95%E7%90%86%E6%B5%81%E7%A8%8B.md)相關。
 
-```
-  ###
-    前面定義 error.type 預設為 danger，如果自己有設定就覆蓋。
-    最重要的是 return 這段 ， 會將 error 轉成只傳 key 與 陣列內容相符的值 。
-    例如：
-      error = {msg: 'msg', test: 'test'}
-      error 傳進去會回傳  {msg: 'msg', type:'danger'}
-      有發現 test 被略掉了嗎 [?!!]
-  ###
+* * *
 
-  return JSON.parse(JSON.stringify(error, ['message', 'type', 'inner', 'msg', "params"], 2))
-```
+## Controller Spec  --  `.end (error, res)` 的 error 為何總是 null？
 
-### 小結
-
-沒有特別要回傳其他值時使用 `ParserService.errorToJson` 篩選出需要的訊息即可，
-
-反之，需要回傳其他值時，對於 socket 所需顯示的訊息和格式就需要自行定義。
-
-補充：客製化的 message 則在 `linker/js/common/notice/app.coffee` 調整。
-
-
-
-## Controller Spec
-
-前情提要： `.end (error, res)` 的 error 為何總是 null / res.body 是什麼？
-
-```
+```javascript
   request(sails.hooks.http.app)
   .post(“/controller/function/")
   .send(params)
@@ -166,7 +138,7 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
     # res.body.should.be ....
     # res.body.should.be ....
 ```
-> 沒有用 expect 的話 erorr 就只可能是 null ， 而 `(error == null).should.be.true` 就像棒球的快樂槍一樣。
+> 沒有用 expect 的話 erorr 就只可能是 null 。
 
 > res.body 等同於 api controller 中最後所傳的 error / data （包含後續對參數的處理變動）。
 
@@ -184,7 +156,7 @@ ParserService.errorToJson 的 code 如下，與[codeRules/Error訊息處理流�
 
 - spec 最簡單確認成功與否的方式是：
 
-```
+```javascript
   res.statusCode.should.equal 200 # ok
   res.statusCode.should.equal 500 # error
 ```
