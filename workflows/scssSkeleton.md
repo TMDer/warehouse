@@ -29,6 +29,8 @@
     * _user.scss
   * common
     * _*.scss
+  * directive
+    * _*.scss 
 
 
 ### home.scss
@@ -37,11 +39,13 @@
 
 ### variables.scss
 
-只存放共用變數 (ex. $brand-success: #93be36;)
+只存放共用變數 (ex. color-white: #ffffff;)
 
 ### basic.scss
 
 我們系統的基本樣式, 以及可以使用的 @mixin, @extend 等等
+
+命名方式以 'dash' 為準
 
 ex. 
 
@@ -81,7 +85,7 @@ ex.
 
 :: adminer內的其他的資料夾
 
-目前規劃只會有一個 scss， 並以一個 id 劃分區塊
+目前規劃只會有一個 scss， 並希望以一個 id 劃分區塊
 
 ex.
 
@@ -97,5 +101,6 @@ ex.
 }
 ```
 
+希望大家多用 `compass`
 
 
