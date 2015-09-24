@@ -112,3 +112,7 @@ e.q.
 希望大家多用 `compass`
 
 http://compass-style.org/
+
+## Note:
+1. 層數請在 4 層內
+2. 如有 4 層解決不了的問題，請給註解
