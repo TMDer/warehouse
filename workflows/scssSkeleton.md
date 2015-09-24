@@ -37,7 +37,7 @@
 
 ### variables.scss
 
-只存放共用變數 (ex. color-white: #ffffff;)
+只存放共用變數 (e.g. color-white: #ffffff;)
 
 ### basic.scss
 
@@ -45,7 +45,7 @@
 
 命名方式以 'dash' 為準
 
-e.q. 
+e.g. 
 
 ```
 // class
@@ -67,7 +67,7 @@ e.q.
 
 ### layout.scss
 
-放置 hearder.scss 以及 footer.scss
+放置 header.scss 以及 footer.scss
 
 ### adminer資料夾
 
@@ -81,11 +81,11 @@ e.q.
 
 共用的 directive 的 scss
 
-e.q. _pmdComponents.scss
+e.g. _pmdComponents.scss
 
 directive 當作個別的 lib, 變數請命名在自己的檔案裡面, 並使用全域變數。
 
-e.q. $aaa-default-color: $color-red;
+e.g. $aaa-default-color: $color-red;
 
 :: adCreateAndEdit
 
@@ -95,7 +95,7 @@ e.q. $aaa-default-color: $color-red;
 
 目前規劃只會有一個 scss， 並希望以一個 id 劃分區塊
 
-e.q.
+e.g.
 
 ```
 #audience {
