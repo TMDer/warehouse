@@ -47,7 +47,7 @@
 
 命名方式以 'dash' 為準
 
-ex. 
+e.q. 
 
 ```
 // class
@@ -77,9 +77,15 @@ ex.
 
 :: common
 
-共用的 lib 或 directive 的 scss
+共用的 lib 的 scss
 
 :: adCreateAndEdit
+
+:: directive
+
+共用的 directive 的 scss
+
+e.q. _pmdComponents.scss
 
 每個階段的 scss ( adCampaign, adSet, adCreative, adGroup )
 
@@ -87,7 +93,7 @@ ex.
 
 目前規劃只會有一個 scss， 並希望以一個 id 劃分區塊
 
-ex.
+e.q.
 
 ```
 #audience {
