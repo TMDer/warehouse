@@ -4,7 +4,7 @@
 * _variables.scss
 * _basic.scss
 * _layout.scss
-* adminer
+* adMiner
   * _index.scss 
   * adMgmt
     * _admgmt.scss
@@ -16,8 +16,6 @@
     * _report.scss
   * dashboard
     * _dashboard.scss
-  * editUserProfile
-    * _editUseProfile.scss
   * eventLog
     * _eventLog.scss
   * adCreateAndEdit (adCampaign, adCreative, adGroup, adSet)
@@ -79,13 +77,13 @@ e.q.
 
 共用的 lib 的 scss
 
-:: adCreateAndEdit
-
 :: directive
 
 共用的 directive 的 scss
 
 e.q. _pmdComponents.scss
+
+:: adCreateAndEdit
 
 每個階段的 scss ( adCampaign, adSet, adCreative, adGroup )
 
@@ -109,4 +107,4 @@ e.q.
 
 希望大家多用 `compass`
 
-
+http://compass-style.org/
