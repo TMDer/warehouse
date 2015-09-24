@@ -83,6 +83,10 @@ e.q.
 
 e.q. _pmdComponents.scss
 
+directive 當作個別的 lib, 變數請命名在自己的檔案裡面, 並使用全域變數。
+
+e.q. $aaa-default-color: $color-red;
+
 :: adCreateAndEdit
 
 每個階段的 scss ( adCampaign, adSet, adCreative, adGroup )
