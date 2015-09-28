@@ -39,4 +39,13 @@ nvm install iojs-v1.8.3
 nvm alias iojs-v1.8.3 default
 nvm use default
 ```
+
+### install node tools
+
+```
+npm i -g grunt-cli
+npm i -g gulp
+npm i -g bower
+
+```
   
