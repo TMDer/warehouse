@@ -36,7 +36,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
  
 ```
 nvm install iojs-v1.8.3
-nvm alias iojs-v1.8.3 default
+nvm alias default iojs-v1.8.3
 nvm use default
 ```
 
