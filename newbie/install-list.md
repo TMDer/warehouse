@@ -1,5 +1,8 @@
 #every thing you have to install
 
+## Windows
+
+ * [chocolatey](https://chocolatey.org/)
 
 ## MacOS
 
