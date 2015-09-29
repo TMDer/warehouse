@@ -15,7 +15,7 @@ sudo xcodebuild -license
  * [homebrew](http://brew.sh/)
  
 ```
-
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ### install bash-it
