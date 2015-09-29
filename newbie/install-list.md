@@ -3,6 +3,7 @@
 ## Windows
 
  * [chocolatey](https://chocolatey.org/)
+ * [prepros](https://prepros.io/)
 
 ## MacOS
 
