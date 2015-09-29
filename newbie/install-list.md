@@ -18,16 +18,12 @@ sudo xcodebuild -license
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### install bash-it
+### Other option
 
-```
-git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-~/.bash_it/install.sh
-```
-
- * [git]
+ * git
  * mongoDB < 3.0
  * MySQL
+ * imagemagick
  
 ### install nvm
 
@@ -49,3 +45,11 @@ npm i -g bower
 
 ```
   
+
+### install bash-it (option)
+
+```
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+~/.bash_it/install.sh
+```
+
