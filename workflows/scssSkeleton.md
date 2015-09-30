@@ -71,7 +71,11 @@ e.g.
 
 ### adminer資料夾
 
-   style/adminer 資料夾結構如同 template
+   style/adminer 資料夾結構大致如同 template
+   
+:: index.scss
+
+home page 的頁面 scss
 
 :: common
 
