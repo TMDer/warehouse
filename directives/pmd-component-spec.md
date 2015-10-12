@@ -14,16 +14,16 @@ commonApp.basicBtn
 * fa: 按鈕圖示的 class
 * disabled: 是否禁止點下按鈕
  
-#### draft 項目
+#### draft
 pewv / next / cancel / submit / icon-create / icon-delete / icon-copy / icon-edit / icon-sync
 
-#### color 項目
+#### color
 gray(default) / green / purple
 
-#### fa class 參考
+#### fa
 https://fortawesome.github.io/Font-Awesome/icons/
 
-#### disabled 項目
+#### disabled
 true / false
    
 #### 使用範例
