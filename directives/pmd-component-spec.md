@@ -23,7 +23,7 @@ gray(default) / green / purple
 #### fa class 參考
 https://fortawesome.github.io/Font-Awesome/icons/
 
-#### color 項目
+#### disabled 項目
 true / false
    
 #### 使用範例
