@@ -4,23 +4,44 @@
 
 ## ::basicButton  
 #### Module Name
-common.basicBtn
+commonApp.basicBtn
 
 
 #### 參數說明
-* color(required): 按鈕顏色 green(綠色) / gray(灰色)
-* size(required): 按鈕大小 strip(長方形) /icon(圖示)
-* text(required): 顯示文字 (圖示形按鈕請放入 fa 的 class)
-* disabled: 禁止點下按鈕 true / false， default is false
+* draft: 指定常用的按鈕樣式，會自動套入預設的 color 和 text
+* color: 按鈕顏色
+* text: 顯示文字
+* fa: 按鈕圖示的 class
+* disabled: 是否禁止點下按鈕
+ 
+#### draft 項目
+pewv / next / cancel / submit / icon-create / icon-delete / icon-copy / icon-edit / icon-sync
+
+#### color 項目
+gray(default) / green / purple
+
+#### fa class 參考
+https://fortawesome.github.io/Font-Awesome/icons/
+
+#### color 項目
+true / false
    
-#### 使用方式
+#### 使用範例
     
 ```
-    basic-btn(color="green", size="strip", text="Next")
-    basic-btn(color="gray", size="strip", text="Create")
-    basic-btn(color="green", size="icon", text="fa-trash-o")
-    basic-btn(color="gray", size="icon", text="fa-plus")
-    basic-btn(color="gray", size="strip", text="disabled", disabled="true")
+basic-btn(draft="prev")
+basic-btn(draft="next")
+basic-btn(draft="cancel")
+basic-btn(draft="submit")
+basic-btn(draft="icon-create")
+basic-btn(draft="icon-delete")
+basic-btn(draft="icon-copy")
+basic-btn(draft="icon-edit")
+basic-btn(draft="icon-sync")
+basic-btn(color="purple", text="Home", fa="fa-home fa-fw")
+basic-btn(color="purple", text="Home", fa="fa-home fa-fw", disabled="true")
+basic-btn(color="green", fa="fa-refresh")
+basic-btn(color="green", fa="fa-refresh", disabled="true")
 ```
 
 ## ::pmdDropdown  
