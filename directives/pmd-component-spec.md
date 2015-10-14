@@ -63,6 +63,11 @@ true / false
 
 #### 使用方式
 ```
+$scope.changeRadio = (item) ->
+  console.log "selected item=", item
+  console.log "$scope.target=", $scope.target
+  return
+  
 $scope.sexRadioDataList = [
   {text: "Man", value: "man"},
   {text: "Woman", value: "woman", isDefault: "true"},
