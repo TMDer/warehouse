@@ -58,9 +58,8 @@ commonApp.basicRadio
 由 { text:"要顯示的文字", value: "點選後的值" } 組成的陣列 
 { text:"要顯示的文字", value: "點選後的值", disabled: "true" } 則無法選取
 
-#### name
-字串
-
+#### disableAll
+true / false
 
 #### 使用方式
 ```
