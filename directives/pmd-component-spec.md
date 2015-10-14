@@ -6,7 +6,6 @@
 #### Module Name
 commonApp.basicBtn
 
-
 #### 參數說明
 * draft: 指定常用的按鈕樣式，會自動套入預設的 color 和 text
 * color: 按鈕顏色
@@ -42,6 +41,63 @@ basic-btn(color="purple", text="Home", fa="fa-home fa-fw")
 basic-btn(color="purple", text="Home", fa="fa-home fa-fw", disabled="true")
 basic-btn(color="green", fa="fa-refresh")
 basic-btn(color="green", fa="fa-refresh", disabled="true")
+```
+
+## ::basicRadio
+#### Module Name
+commonApp.basicRadio
+
+#### 參數說明
+* radioData(required): 元件要顯示的內容陣列
+* name(required): 元件名稱(要設定才能讓 radio 裡的項目綁定為一組)
+* ngModel: 元件被選取後要綁定的 scope 變數
+* radioChange: 元件變更選取項目時要觸發的 function
+* disableAll: 將此元件變更爲不可選取狀態
+
+#### radioData
+由 { text:"要顯示的文字", value: "點選後的值" } 組成的陣列 
+{ text:"要顯示的文字", value: "點選後的值", disabled: "true" } 則無法選取
+
+#### name
+字串
+
+
+#### 使用方式
+```
+$scope.changeRadio = (item) ->
+  console.log "selected item=", item
+  console.log "$scope.target=", $scope.target
+  return
+
+$scope.sexRadioData = [
+  {text: "Man", value: "man"},
+  {text: "Woman", value: "woman"},
+]
+
+$scope.ageRadioData = [
+  {text: "<12", value: "12"},
+  {text: "<20", value: "19"},
+  {text: ">=20", value: "20", disabled: "true"}
+]
+$scope.petRadioData = [
+  {text: "Dog", value: "dog"},
+  {text: "Cat", value: "cat"},
+]
+$scope.target = {
+  sex: "man"
+  age: "12"
+  pet: ""
+}
+$scope.disabledAll = true
+```
+```
+div
+ | Sex:
+ basic-radio(name="sex", radio-data="sexRadioData", radio-change="changeRadio(item)", ng-model="target.sex")
+ | Age:
+ basic-radio(name="age", radio-data="ageRadioData", ng-model="target.age")
+ | Pet:
+ basic-radio(name="pet", radio-data="petRadioData", ng-model="target.pet", disable-all="disabledAll")
 ```
 
 ## ::pmdDropdown  
@@ -90,33 +146,6 @@ form.form-horizontal(role='form', name="adCampaignForm")
       pmd-input(type="'url'", form="adCampaignForm", name="url", placeholder="Please Input URL", ng-model="adCampaign.url", required="true", required-message="此欄位必填")
       pmd-input(type="'url'", form="adCampaignForm", name="url2", placeholder="Please Input URL", ng-model="adCampaign.mpa.url", required="true", required-message="此欄位必填")
       pmd-input(type="'text'", form="adCampaignForm", name="text2", placeholder="Readonly", ng-model="adCampaign.text", disabled="true", required-message="此欄位必填")
-```
-
-## ::pmdRadio
-#### Module Name
-common.pmdRadio
-
-
-#### 參數說明
-* radioData(required): 元件要顯示的物件
-* ngModel(required): 元件被選取後要綁定的變數
-* name(required): 元件名稱
-* pmdChange: 元件變更選取項目時要觸發的方法
-* disableAll: 將此元件變更爲不可選取狀態
-* defalutPosition: 元件預設選取的項目， default is null
-
-#### 使用方式
-
-```
-$scope.radioData = [
-      {text: "Daily", value: "daily"},
-      {text: "Forever", value: "forever"},
-      {text: "One Week", value: "week", disabled:"true"}
-    ]
-    
-pmd-radio(radio-data="radioData", name="dailySetRadio", ng-model="seletecRadio", pmd-change="changRadio()", defalut-position="0")
-      
-pmd-radio(radio-data="radioData", name="dateRangeSettings", ng-model="seletecRadio", pmd-change="changRadio()", defalut-position="0", disable-all="true")
 ```
 
 ## ::pmdCheckbox
