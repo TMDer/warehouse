@@ -55,7 +55,7 @@ commonApp.basicRadio
 * disableAll: 將此元件變更爲不可選取狀態
 
 #### radioData
-由 { text:"要顯示的文字", value: "點選後的值" } 組成的陣列 
+{ text:"要顯示的文字", value: "點選後的值" } 
 { text:"要顯示的文字", value: "點選後的值", disabled: "true" } 則無法選取
 
 #### disableAll
@@ -63,40 +63,41 @@ true / false
 
 #### 使用方式
 ```
-$scope.changeRadio = (item) ->
-  console.log "selected item=", item
-  console.log "$scope.target=", $scope.target
-  return
-
-$scope.sexRadioData = [
+$scope.sexRadioDataList = [
   {text: "Man", value: "man"},
-  {text: "Woman", value: "woman"},
+  {text: "Woman", value: "woman", isDefault: "true"},
 ]
 
-$scope.ageRadioData = [
+$scope.ageRadioDataList = [
   {text: "<12", value: "12"},
   {text: "<20", value: "19"},
   {text: ">=20", value: "20", disabled: "true"}
 ]
-$scope.petRadioData = [
+
+$scope.petRadioDataList = [
   {text: "Dog", value: "dog"},
   {text: "Cat", value: "cat"},
 ]
+
 $scope.target = {
   sex: "man"
   age: "12"
   pet: ""
 }
+
 $scope.disabledAll = true
 ```
 ```
 div
- | Sex:
- basic-radio(name="sex", radio-data="sexRadioData", radio-change="changeRadio(item)", ng-model="target.sex")
- | Age:
- basic-radio(name="age", radio-data="ageRadioData", ng-model="target.age")
- | Pet:
- basic-radio(name="pet", radio-data="petRadioData", ng-model="target.pet", disable-all="disabledAll")
+  | Sex:
+  div(ng-repeat="sexRadioData in sexRadioDataList")
+    basic-radio(name="sex", radio-data="sexRadioData", radio-change="changeRadio(item)", ng-model="target.sex")
+  | Age:
+  div(ng-repeat="ageRadioData in ageRadioDataList")
+    basic-radio(name="age", radio-data="ageRadioData", ng-model="target.age")
+  | Pet:
+  div(ng-repeat="petRadioData in petRadioDataList")
+    basic-radio(name="pet", radio-data="petRadioData", ng-model="target.pet", disable-all="disabledAll")
 ```
 
 ## ::pmdDropdown  
