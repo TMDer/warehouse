@@ -11,7 +11,6 @@ commonApp.basicBtn
 * color: 按鈕顏色
 * text: 顯示文字
 * fa: 按鈕圖示的 class
-* disabled: 是否禁止點下按鈕
  
 #### draft
 pewv / next / cancel / submit / icon-create / icon-delete / icon-copy / icon-edit / icon-sync
@@ -38,9 +37,9 @@ basic-btn(draft="icon-copy")
 basic-btn(draft="icon-edit")
 basic-btn(draft="icon-sync")
 basic-btn(color="purple", text="Home", fa="fa-home fa-fw")
-basic-btn(color="purple", text="Home", fa="fa-home fa-fw", disabled="true")
+basic-btn(color="purple", text="Home", fa="fa-home fa-fw", ng-disabled="true")
 basic-btn(color="green", fa="fa-refresh")
-basic-btn(color="green", fa="fa-refresh", disabled="true")
+basic-btn(color="green", fa="fa-refresh", ng-disabled="true")
 ```
 
 ## ::basicRadio
