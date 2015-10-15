@@ -111,17 +111,22 @@ common.pmdDropdown
 
 
 #### 參數說明
-* items(required): Dropdown Items ，項目不可重複 (Array)
+* items(required): Dropdown Items，項目不可重複 (Array)
 * selected-osition(required): 目前選擇項目的位置 (String)
+* status: dropdown 的狀態(default, disabled, locked)，default is "default"
+	* default:  
+	![default](./directive-images/dropdown-default.png)  
+	* disabled:  
+	![default](./directive-images/dropdown-disabled.png)  
+	* locked:  
+	![default](./directive-images/dropdown-locked.png)  
 * pmd-change: 使用者點選後觸發的動作 (Function)
 * defalut-position: 預設顯示的項目 (Int)， default is 0
-* disabled: 是否要停用這個物件， default is false
+* disabled: 是否要停用這個物件，default is false
    
 #### 使用方式
     
-```
-    pmd-dropdown(items="trafficValueArgs", defalut-position="0", selected-position="trafficTypePosition" pmd-change="selectedWebsiteTraffic(trafficArgs[trafficTypePosition], trafficTypePosition)")
-```
+`pmd-dropdown(status="default" items="trafficValueArgs", defalut-position="0", selected-position="trafficTypePosition" pmd-change="selectedWebsiteTraffic(trafficArgs[trafficTypePosition], trafficTypePosition)")`
 
 ## ::pmdInput
 http://stackoverflow.com/questions/14378401/dynamic-validation-and-name-in-a-form-with-angularjs
