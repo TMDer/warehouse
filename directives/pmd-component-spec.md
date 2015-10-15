@@ -41,7 +41,44 @@ basic-btn(color="purple", text="Home", fa="fa-home fa-fw", ng-disabled="true")
 basic-btn(color="green", fa="fa-refresh")
 basic-btn(color="green", fa="fa-refresh", ng-disabled="true")
 ```
+   
+   
+## ::basicInput
+#### Module Name
+commonApp.basicInput
 
+#### 參數說明
+* noticeDom: 想要設為 [notice 訊息 DOM] 的搜尋(.find())條件
+
+#### noticeDom 參數
+* noticeColor: "red" / "green" 要顯示的訊息顏色，預設為無(黑色)
+   
+#### 使用範例
+
+```
+form(name="fridayForm" novalidate=)
+  basic-input(type="text" name="name" placeholder="Please insert your name"
+  ng-model="basicInput.name" notice-dom="#notice1, #notice2"
+  ng-minlength="3" required)
+
+  #notice1(notice-color ="red" ng-show="fridayForm.name.$error.required") Can not be empty
+  #notice2(notice-color ="green" ng-show="fridayForm.name.$error.minlength") Min-length must >= 3
+
+  basic-input(type="text" name="phone" placeholder="Please insert your phone"
+  ng-model="basicInput.phone" notice-dom="#notice3, #notice4"
+  ng-minlength="7" required)
+
+  #notice3 This is normal notice
+  #notice4(notice-color ="green" ng-show="fridayForm.phone.$error.minlength") Min-length must >= 7
+
+  basic-input(tag-name="textarea" name="address" placeholder="Please insert your address"
+  width="68%" height="100px"
+  ng-model="basicInput.address")
+
+| {{basicInput}}
+```   
+   
+   
 ## ::basicRadio
 #### Module Name
 commonApp.basicRadio
@@ -102,6 +139,9 @@ div
     div(ng-repeat="petRadioData in petRadioDataList")
     basic-radio(name="pet", radio-data="petRadioData", radio-change="changeRadio(item)", radio-model="target.pet", radio-disabled="petRadioData.disabled")
 ```
+   
+   
+# 待更新
 
 ## ::pmdDropdown  
 #### Module Name
@@ -123,38 +163,8 @@ common.pmdDropdown
 * disabled: 是否要停用這個物件，default is false
    
 #### 使用方式
-    
 `pmd-dropdown(status="default" items="trafficValueArgs", defalut-position="0", selected-position="trafficTypePosition" pmd-change="selectedWebsiteTraffic(trafficArgs[trafficTypePosition], trafficTypePosition)")`
 
-## ::pmdInput
-http://stackoverflow.com/questions/14378401/dynamic-validation-and-name-in-a-form-with-angularjs
-#### Module Name
-common.pmdInput
-
-
-#### 參數說明
-* form(required): 這個 input 的 form 物件
-* ngModel(required): 這個 input 對應到的 model
-* type(required): 輸入類型 text(文字) / url(網址)
-* name(required): 這個 input 在 form 裏面的名稱
-* placeholder: 提示輸入訊息
-* maxlengthMessage: 超過長度警告訊息
-* requiredMessage: 未填入文字警告訊息
-* minlength: 最短字數限制
-* maxlength: 最長字數限制
-* required: 是否爲必填， default is false
-* disabled: 是否要停用這個 input， default is false
-   
-#### 使用方式
-
-```
-form.form-horizontal(role='form', name="adCampaignForm")
-      pmd-input(type="text", form="adCampaignForm", name="adName", placeholder="Please Input Name", ng-model="adCampaign.name", minlength="1", maxlength="50", required="true", maxlength-message="最長五0個字", required-message="此欄位必填")
-      pmd-input(type="'text'", form="adCampaignForm", name="editName", placeholder="Please Input Name", ng-model="adCampaign.title", minlength="1", maxlength="50", required="true", maxlength-message="最長五0個字", required-message="此欄位必填")
-      pmd-input(type="'url'", form="adCampaignForm", name="url", placeholder="Please Input URL", ng-model="adCampaign.url", required="true", required-message="此欄位必填")
-      pmd-input(type="'url'", form="adCampaignForm", name="url2", placeholder="Please Input URL", ng-model="adCampaign.mpa.url", required="true", required-message="此欄位必填")
-      pmd-input(type="'text'", form="adCampaignForm", name="text2", placeholder="Readonly", ng-model="adCampaign.text", disabled="true", required-message="此欄位必填")
-```
 
 ## ::pmdCheckbox
 #### Module Name
