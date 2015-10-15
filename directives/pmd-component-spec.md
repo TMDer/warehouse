@@ -69,18 +69,18 @@ $scope.changeRadio = (item) ->
   
 $scope.sexRadioDataList = [
   {text: "Man", value: "man"},
-  {text: "Woman", value: "woman", isDefault: "true"},
+  {text: "Woman", value: "woman"},
 ]
 
 $scope.ageRadioDataList = [
   {text: "<12", value: "12"},
   {text: "<20", value: "19"},
-  {text: ">=20", value: "20", disabled: "true"}
+  {text: ">=20", value: "20"}
 ]
 
 $scope.petRadioDataList = [
   {text: "Dog", value: "dog"},
-  {text: "Cat", value: "cat"},
+  {text: "Cat", value: "cat", disabled: true},
 ]
 
 $scope.target = {
@@ -95,13 +95,13 @@ $scope.disabledAll = true
 div
   | Sex:
   div(ng-repeat="sexRadioData in sexRadioDataList")
-    basic-radio(name="sex", radio-data="sexRadioData", radio-change="changeRadio(item)", ng-model="target.sex")
+    basic-radio(name="sex", radio-data="sexRadioData", radio-change="changeRadio(item)", radio-model="target.sex")
   | Age:
-  div(ng-repeat="ageRadioData in ageRadioDataList")
-    basic-radio(name="age", radio-data="ageRadioData", ng-model="target.age")
+    div(ng-repeat="ageRadioData in ageRadioDataList")
+    basic-radio(name="age", radio-data="ageRadioData", radio-model="target.age")
   | Pet:
-  div(ng-repeat="petRadioData in petRadioDataList")
-    basic-radio(name="pet", radio-data="petRadioData", ng-model="target.pet", disable-all="disabledAll")
+    div(ng-repeat="petRadioData in petRadioDataList")
+    basic-radio(name="pet", radio-data="petRadioData", radio-change="changeRadio(item)", radio-model="target.pet", radio-disabled="petRadioData.disabled")
 ```
 
 ## ::pmdDropdown  
