@@ -17,7 +17,7 @@
 	**true**  
 	![Step disabled](./directive-images/step-disable.png)  
 	**false**  
-	![Step enable](./directive-images/step-enable.png)
+	![Step enable](./directive-images/step-process.png)
 
 * is-finish：控制 step warn icon 的狀態，值為 Boolean  
 	**true**  
@@ -25,14 +25,10 @@
 	**false**  
 	![step warn](./directive-images/step-warn-icon.png)  
 	
-* item-list：傳入下方所需顯示的資料  
-	
-		itemList = [
-			{
-				title: "list 1",
-				message: "Test"
-			}, {
-				title: "list 2",
-				message: "sss"
-			}
-		]
+* status：控制 step 的狀態，值為 default, disable, process
+	* default：僅僅觀看此步驟資訊  
+		![default](./directive-images/step-default.png)
+	* disable：還未進入過此步驟  
+		![disable](./directive-images/step-disable.png)
+	* process：正在此步驟時  
+		![process](./directive-images/step-process.png)
