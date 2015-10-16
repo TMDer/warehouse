@@ -135,7 +135,7 @@ commonApp.basicInput
 #### 使用範例
 
 ```
-form(name="fridayForm" novalidate=)
+form(name="fridayForm" novalidate)
   basic-input(type="text" name="name" placeholder="Please insert your name"
   ng-model="basicInput.name" notice-dom="#notice1, #notice2"
   ng-minlength="3" required)
