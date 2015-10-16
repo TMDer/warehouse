@@ -15,13 +15,13 @@ commonApp.basicBtn
 #### draft
 prev / next / cancel / submit / icon-create / icon-delete / icon-copy / icon-edit / icon-sync
 
-#### color
+#### - color
 gray(default) / green / purple
 
-#### fa
+#### - fa
 https://fortawesome.github.io/Font-Awesome/icons/
 
-#### disabled
+#### - disabled
 true / false
    
 #### 使用範例
@@ -55,10 +55,10 @@ common.basicCheckbox
 * checkboxName: 元件的群組名稱
 * checkboxObject: 可以使用元件提供的 function 的物件(checkboxName 需設置)
 
-#### checkboxData
+#### - checkboxData 格式
 { text:"要顯示的文字", value: "點選後的值", checked: true/false, disabled: true/false }
 
-#### checkboxObj 提供的 function
+#### - checkboxObj 提供的 function
 * selectAll() : 全選/反全選 有相同 checkboxName 的元件
 * reverseAll()： 反選取 有相同 checkboxName 的元件
 
@@ -129,7 +129,7 @@ commonApp.basicInput
 #### 參數說明
 * noticeDom: 想要設為 [notice 訊息 DOM] 的搜尋(.find())條件
 
-#### noticeDom 參數
+#### - noticeDom 參數
 * noticeColor: "red" / "green" 要顯示的訊息顏色，預設為無(黑色)
    
 #### 使用範例
@@ -169,10 +169,10 @@ commonApp.basicRadio
 * radioChange: 元件變更選取項目時要觸發的 function
 * radioDisabled: 將此元件變更爲不可選取狀態
 
-#### radioData
+#### - radioData 格式
 { text:"要顯示的文字", value: "點選後的值" }
 
-#### radioDisabled
+#### - radioDisabled 格式
 true / false
 
 #### 使用範例
