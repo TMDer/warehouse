@@ -52,80 +52,67 @@ common.basicCheckbox
 * checkboxData(required): 元件要顯示的內容陣列
 * checkboxModel(required): 元件被選取後要綁定的 scope 變數
 * checkboxChange:元件變更選取項目時要觸發的 function
-* checkboxDisabled: 將此元件變更爲不可選取狀態
 
 #### checkboxData
-{ text:"要顯示的文字", value: "點選後的值" }
+{ text:"要顯示的文字", value: "點選後的值", checked: true/false, disabled: true/false }
 
-#### checkboxDisabled
-true / false
 
 #### 使用範例
 
 ```
-$scope.allFoodsCheckedData = {text: "SelectAll", value: "allFoodsChecked"}
+ifAllChecked = ->
+  allChecked = true
+  _.forEach($scope.foodCheckboxDataList, (item)->
+    unless item.checked
+      allChecked = false
+      return false
+  )
+  return allChecked
 
-$scope.allFoodsCheckedModel = {
-  allFoodsChecked: false
-}
+$scope.allFoodsCheckedData = {text: "Check All"}
 
 $scope.foodCheckboxDataList = [
-  {text: "Noodle", value: "noodle"},
-  {text: "Rice", value: "rice"},
+  {text: "Noodle", value: "noodle", checked: true}
+  {text: "Rice", value: "rice"}
   {text: "Hamburger", value: "hamburger"}
-  {text: "Chicken", value: "chicken", disabled: true}
+  {text: "Chicken", value: "chicken", checked: true, disabled: true}
   {text: "Beef", value: "beef", disabled: true}
 ]
 
-$scope.selectedFoods = {
-  noodle: false
-  rice: true
-  hamburger: false
-  chicken: false
-  beef: true
-}
+$scope.foodList = []
 
 $scope.selectAllCheckbox = ->
-  if $scope.allFoodsCheckedModel.allFoodsChecked
-    _.forEach($scope.selectedFoods, (val, key) ->
-      $scope.selectedFoods[key] = true
+  unless ifAllChecked()
+    _.forEach($scope.foodCheckboxDataList, (item)->
+      item.checked = true
       return
     )
     return
-
-  _.forEach($scope.selectedFoods, (val, key) ->
-    $scope.selectedFoods[key] = false
+  _.forEach($scope.foodCheckboxDataList, (item)->
+    item.checked = false
     return
   )
   return
 
-$scope.ifAllFoodsChecked = ->
-  $scope.allFoodsCheckedModel.allFoodsChecked = true
-  _.forEach($scope.selectedFoods, (val) ->
-    unless val
-      $scope.allFoodsCheckedModel.allFoodsChecked = false
-      return false
-    return true
-  )
-  return
-
-
 $scope.changeCheckbox = (item) ->
-  $scope.ifAllFoodsChecked()
   console.log "checked item=", item
-  return
+  unless ifAllChecked()
+    $scope.allFoodsCheckedData.checked = false
+    return
+  $scope.allFoodsCheckedData.checked = true
 
-$scope.ifAllFoodsChecked()
+  return
 ```
 ```
-| Food:
 div
-  basic-checkbox#selectAllFoods(checkbox-data="allFoodsCheckedData" checkbox-model="allFoodsCheckedModel"  checkbox-change="selectAllCheckbox()")
+  | Food:
+  div
+    basic-checkbox#selectAllFoods(checkbox-data="allFoodsCheckedData" checkbox-change="selectAllCheckbox()")
   div
     span(ng-repeat="foodCheckboxData in foodCheckboxDataList" style="margin-left:10px")
-      basic-checkbox(checkbox-data="foodCheckboxData" checkbox-model="selectedFoods" checkbox-change="changeCheckbox(item)", checkbox-disabled="foodCheckboxData.disabled")
+      basic-checkbox(checkbox-data="foodCheckboxData" checkbox-model="foodList" checkbox-change="changeCheckbox(item)")
   div
-  | {{selectedFoods}}
+  | {{foodList}}
 ``` 
    
    
