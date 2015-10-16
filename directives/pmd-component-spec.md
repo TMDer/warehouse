@@ -246,28 +246,3 @@ commonApp.basicDropdown
 
 #### 使用方式
 `basic-dropdown(item-key="key" status="default" items="trafficValueArgs", defalut-position="0", selected-position="trafficTypePosition" pmd-change="selectedWebsiteTraffic(trafficArgs[trafficTypePosition], trafficTypePosition)")`
-
-
-## ::pmdCheckbox
-#### Module Name
-common.pmdCheckbox
-
-
-#### 參數說明
-* checkboxData(required): 元件要顯示的物件
-* ngModel(required): 元件被選取後要綁定的變數
-* type: 形狀 round / square
-* pmdChange: 元件變更選取項目時要觸發的方法
-* disableAll: 將此元件變更爲不可選取狀態
-
-#### 使用方式
-
-```
-$scope.checkboxData = [
-      {text: "Today", value: "Today"},
-      {text: "Yesterday", value: "Yesterday", checked:true},
-      {text: "Tomorrow", value: "Tomorrow", disabled:true}
-    ]
-pmd-checkbox(checkbox-data="checkboxData", ng-model="seletecCheckbox", pmd-change="changCheckbox()")  
-pmd-checkbox(checkbox-data="checkboxData", ng-model="seletecCheckbox", pmd-change="changCheckbox()", disable-all="true")
-```
