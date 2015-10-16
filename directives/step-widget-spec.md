@@ -13,7 +13,7 @@
 
 * disabled：控制 step 的狀態，將會無法點擊，值為 Boolean  
 	**true**  
-	![Step disabled](./directive-images/step-active.png)  
+	![Step disabled](./directive-images/step-inactive.png)  
 	**false**  
 	![Step enable](./directive-images/step-edit.png)
 
@@ -24,11 +24,11 @@
 	![step warn](./directive-images/step-warn-icon.png)  
 	
 * status：控制 step 的 UI 顯示狀態，值為 inactive, active, edit
-	* active：僅僅觀看此步驟資訊  
+	* active：僅僅觀看此步驟資訊(button 灰色)  
 		![default](./directive-images/step-active.png)
-	* inactive：還未進入過此步驟  
+	* inactive：還未進入過此步驟(hover 時 button 灰色)  
 		![disable](./directive-images/step-inactive.png)
-	* edit：正在此步驟時  
+	* edit：正在此步驟時(button 藍色)  
 		![process](./directive-images/step-edit.png)
 		
 ### Step block
