@@ -13,7 +13,7 @@ commonApp.basicBtn
 * fa: 按鈕圖示的 class
  
 #### draft
-pewv / next / cancel / submit / icon-create / icon-delete / icon-copy / icon-edit / icon-sync
+prev / next / cancel / submit / icon-create / icon-delete / icon-copy / icon-edit / icon-sync
 
 #### color
 gray(default) / green / purple
