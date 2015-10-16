@@ -225,19 +225,22 @@ div
     div(ng-repeat="petRadioData in petRadioDataList")
     basic-radio(name="pet", radio-data="petRadioData", radio-change="changeRadio(item)", radio-model="target.pet", radio-disabled="petRadioData.disabled")
 ```
-   
-   
-# 待更新
 
-## ::pmdDropdown  
+## ::basicDropdown  
 #### Module Name
-common.pmdDropdown
+commonApp.basicDropdown
 
 
 #### 參數說明
-* items(required): Dropdown Items，項目不可重複 (Array)
-* selected-osition(required): 目前選擇項目的位置 (String)
-* status: dropdown 的狀態(default, disabled, locked)，default is "default"
+* items(required): Dropdown Items，項目不可重複 (Array)  
+	`[1, 3, , 443, "test"]`
+`[{A: a1, B: b1, C: c1}, {A: a2, B: b2}, {A: a3, C: c3}]`
+* item-key: 配合 items 使用，如果內部資料是 Object，則需要調入要查找的 key。
+	例如要找尋`[{A: a1, B: b1, C: c1}, {A: a2, B: b2}, {A: a3, C: c3}]` 中的 `A`則傳入`A`
+
+* defalut-position: 預設顯示的項目 (Int)，預設值是`0`
+* selected-position(required): 目前選擇項目的位置 (Array 中的第幾項, Int)
+* status: dropdown 的狀態(default, disabled, locked)，預設值是`default`
 	* default:  
 	![default](./directive-images/dropdown-default.png)  
 	* disabled:  
@@ -245,8 +248,33 @@ common.pmdDropdown
 	* locked:  
 	![default](./directive-images/dropdown-locked.png)  
 * pmd-change: 使用者點選後觸發的動作 (Function)
-* defalut-position: 預設顯示的項目 (Int)， default is 0
-* disabled: 是否要停用這個物件，default is false
-   
-#### 使用範例
-`pmd-dropdown(status="default" items="trafficValueArgs", defalut-position="0", selected-position="trafficTypePosition" pmd-change="selectedWebsiteTraffic(trafficArgs[trafficTypePosition], trafficTypePosition)")`
+* disabled: 是否要停用這個物件(Boolean)，預設值是`false`
+
+
+#### 使用方式
+`basic-dropdown(item-key="key" status="default" items="trafficValueArgs", defalut-position="0", selected-position="trafficTypePosition" pmd-change="selectedWebsiteTraffic(trafficArgs[trafficTypePosition], trafficTypePosition)")`
+
+
+## ::pmdCheckbox
+#### Module Name
+common.pmdCheckbox
+
+
+#### 參數說明
+* checkboxData(required): 元件要顯示的物件
+* ngModel(required): 元件被選取後要綁定的變數
+* type: 形狀 round / square
+* pmdChange: 元件變更選取項目時要觸發的方法
+* disableAll: 將此元件變更爲不可選取狀態
+
+#### 使用方式
+
+```
+$scope.checkboxData = [
+      {text: "Today", value: "Today"},
+      {text: "Yesterday", value: "Yesterday", checked:true},
+      {text: "Tomorrow", value: "Tomorrow", disabled:true}
+    ]
+pmd-checkbox(checkbox-data="checkboxData", ng-model="seletecCheckbox", pmd-change="changCheckbox()")  
+pmd-checkbox(checkbox-data="checkboxData", ng-model="seletecCheckbox", pmd-change="changCheckbox()", disable-all="true")
+```
