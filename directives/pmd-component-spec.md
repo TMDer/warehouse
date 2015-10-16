@@ -51,27 +51,34 @@ common.basicCheckbox
 #### 參數說明
 * checkboxData(required): 元件要顯示的內容陣列
 * checkboxModel(required): 元件被選取後要綁定的 scope 變數
-* checkboxChange:元件變更選取項目時要觸發的 function
+* checkboxChange: 元件變更選取項目時要觸發的 function
+* checkboxName: 元件的群組名稱
+* checkboxObject: 可以使用元件提供的 function 的物件(checkboxName 需設置)
 
 #### checkboxData
 { text:"要顯示的文字", value: "點選後的值", checked: true/false, disabled: true/false }
 
+#### checkboxObj 提供的 function
+* selectAll() : 全選/反全選 有相同 checkboxName 的元件
+* reverseAll()： 反選取 有相同 checkboxName 的元件
 
 #### 使用範例
 
 ```
 ifAllChecked = ->
-  allChecked = true
-  _.forEach($scope.foodCheckboxDataList, (item)->
-    unless item.checked
-      allChecked = false
-      return false
-  )
-  return allChecked
+  return $scope.foodList.length is $scope.foodParamList.length
 
-$scope.allFoodsCheckedData = {text: "Check All"}
+ifEnableSelectAllIcon = ->
+  unless ifAllChecked()
+    $scope.selectAllFoodsParam.checked = false
+    return
+  $scope.selectAllFoodsParam.checked = true
 
-$scope.foodCheckboxDataList = [
+$scope.selectAllFoodsParam = {text: "Check All"}
+
+$scope.reverseFoodsParam = {text: "Reverse All"}
+
+$scope.foodParamList = [
   {text: "Noodle", value: "noodle", checked: true}
   {text: "Rice", value: "rice"}
   {text: "Hamburger", value: "hamburger"}
@@ -82,35 +89,34 @@ $scope.foodCheckboxDataList = [
 $scope.foodList = []
 
 $scope.selectAllCheckbox = ->
-  unless ifAllChecked()
-    _.forEach($scope.foodCheckboxDataList, (item)->
-      item.checked = true
-      return
-    )
-    return
-  _.forEach($scope.foodCheckboxDataList, (item)->
-    item.checked = false
-    return
-  )
+  $scope.foodParamList.selectAll()
+  return
+
+$scope.reverseAllCheckbox = ->
+  $scope.foodParamList.reverseAll()
+  ifEnableSelectAllIcon()
   return
 
 $scope.changeCheckbox = (item) ->
   console.log "checked item=", item
-  unless ifAllChecked()
-    $scope.allFoodsCheckedData.checked = false
-    return
-  $scope.allFoodsCheckedData.checked = true
-
+  ifEnableSelectAllIcon()
   return
 ```
 ```
 div
   | Food:
   div
-    basic-checkbox#selectAllFoods(checkbox-data="allFoodsCheckedData" checkbox-change="selectAllCheckbox()")
+    span(style="margin-left:10px")
+      basic-checkbox#selectAllFoods(checkbox-data="selectAllFoodsParam" checkbox-change="selectAllCheckbox()")
+
+    span(style="margin-left:10px")
+      basic-checkbox#selectAllFoods(checkbox-data="reverseFoodsParam" checkbox-change="reverseAllCheckbox()")
+
   div
-    span(ng-repeat="foodCheckboxData in foodCheckboxDataList" style="margin-left:10px")
-      basic-checkbox(checkbox-data="foodCheckboxData" checkbox-model="foodList" checkbox-change="changeCheckbox(item)")
+    span(ng-repeat="foodCheckboxData in foodParamList" style="margin-left:10px")
+      basic-checkbox(checkbox-object="foodParamList" checkbox-name="foods"
+      checkbox-data="foodCheckboxData" checkbox-model="foodList"
+      checkbox-change="changeCheckbox(item)")
   div
   | {{foodList}}
 ``` 
