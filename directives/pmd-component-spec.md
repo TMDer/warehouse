@@ -174,6 +174,15 @@ div
       basic-checkbox(checkbox-data="disableRiceParam" checkbox-change="switchEnableCheckbox('rice')")
     span(style="margin-left:10px")
       basic-checkbox(checkbox-data="disableHCParam" checkbox-change="switchEnableCheckbox(['hamburger','chicken'])")
+
+    div
+      span(ng-repeat="foodCheckboxData in foodParamList" style="margin-left:10px")
+        basic-checkbox(checkbox-object="foodParamList" checkbox-name="foods"
+        checkbox-data="foodCheckboxData" checkbox-model="foodList"
+        checkbox-change="changeCheckbox(item)")
+    div
+    | amount: {{foodParamList.selectedAmount}}
+    | value: {{foodList}}
 ``` 
    
    
