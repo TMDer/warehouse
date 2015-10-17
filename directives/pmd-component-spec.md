@@ -191,7 +191,7 @@ div
 commonApp.basicInput
 
 #### 參數說明
-* noticeDom: 想要設為 [notice 訊息 DOM] 的搜尋(.find())條件
+* noticeDom: 想要設為 [notice 訊息 DOM] 的搜尋.find()條件
 
 #### - noticeDom 參數
 * noticeColor: "red" / "green" 要顯示的訊息顏色，預設為無(黑色)
@@ -199,26 +199,28 @@ commonApp.basicInput
 #### 使用範例
 
 ```
-form(name="fridayForm" novalidate)
-  basic-input(type="text" name="name" placeholder="Please insert your name"
+form(name="demoForm" novalidate)
+  input(basic-input type="text" name="name" placeholder="Please insert your name"
   ng-model="basicInput.name" notice-dom="#notice1, #notice2"
   ng-minlength="3" required)
 
-  #notice1(notice-color ="red" ng-show="fridayForm.name.$error.required") Can not be empty
-  #notice2(notice-color ="green" ng-show="fridayForm.name.$error.minlength") Min-length must >= 3
+  #notice1(notice-color ="red" ng-show="demoForm.name.$error.required") Can not be empty
+  #notice2(notice-color ="green" ng-show="demoForm.name.$error.minlength") Min-length must >= 3
 
-  basic-input(type="text" name="phone" placeholder="Please insert your phone"
+  input(basic-input type="text" name="phone" placeholder="Please insert your phone"
   ng-model="basicInput.phone" notice-dom="#notice3, #notice4"
   ng-minlength="7" required)
 
   #notice3 This is normal notice
-  #notice4(notice-color ="green" ng-show="fridayForm.phone.$error.minlength") Min-length must >= 7
+  #notice4(notice-color ="green" ng-show="demoForm.phone.$error.minlength") Min-length must >= 7
 
-  basic-input(tag-name="textarea" name="address" placeholder="Please insert your address"
+  textarea(basic-input name="address" placeholder="Please insert your address"
   width="68%" height="100px"
   ng-model="basicInput.address")
 
-| {{basicInput}}
+  | {{basicInput}}
+
+  basic-btn(draft="submit" ng-click="getInputValue()" ng-disabled="demoForm.$invalid")
 ```   
    
    
