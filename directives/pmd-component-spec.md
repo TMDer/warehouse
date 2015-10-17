@@ -74,7 +74,7 @@ force: true / false，當 checkbox 為 disabled 時，是否執行
 values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
 force: true / false，當 checkbox 為 disabled 時，是否執行   
    
-* selectAllCheckbox(force) : 全選/反全選 有相同 checkboxName 的元件   
+**selectAllCheckbox(force) : 全選/反全選 有相同 checkboxName 的元件**   
 force: true / false，當 checkbox 為 disabled 時，是否執行   
 
 **clickCheckbox(values, force) 點擊元件**   
@@ -90,60 +90,90 @@ values: checkbox 對應的 value，可為字串或由字串組成的陣列，nul
 #### 使用範例
 
 ```
-ifAllChecked = ->
-  return $scope.foodList.length is $scope.foodParamList.length
-
-ifEnableSelectAllIcon = ->
-  unless ifAllChecked()
+ifSwitchIcon = ->
+  if $scope.foodParamList.isSelectedCheckbox()
+    $scope.selectAllFoodsParam.checked = true
+  else
     $scope.selectAllFoodsParam.checked = false
-    return
-  $scope.selectAllFoodsParam.checked = true
+
+  if $scope.foodParamList.isSelectedCheckbox(null, true)
+    $scope.selectAllFoodsForceParam.checked = true
+  else
+    $scope.selectAllFoodsForceParam.checked = false
+
+  if $scope.foodParamList.isEnabledCheckbox()
+    $scope.disableFoodsParam.checked = true
+  else
+    $scope.disableFoodsParam.checked = false
+
+  if $scope.foodParamList.isEnabledCheckbox("rice")
+    $scope.disableRiceParam.checked = true
+  else
+    $scope.disableRiceParam.checked = false
+
+  if $scope.foodParamList.isEnabledCheckbox(["hamburger", "chicken"])
+    $scope.disableHCParam.checked = true
+  else
+    $scope.disableHCParam.checked = false
 
 $scope.selectAllFoodsParam = {text: "Check All"}
-
+$scope.selectAllFoodsForceParam = {text: "Force Check All"}
 $scope.reverseFoodsParam = {text: "Reverse All"}
-
+$scope.reverseFoodsForceParam = {text: "Force Reverse All"}
+$scope.disableFoodsParam = {text: "Enable All"}
+$scope.disableRiceParam = {text: "Enable Rice", checked: true}
+$scope.disableHCParam = {text: "Enable Hamburger/Chicken"}
 $scope.foodParamList = [
-  {text: "Noodle", value: "noodle", checked: true}
-  {text: "Rice", value: "rice"}
-  {text: "Hamburger", value: "hamburger"}
+  {text: "Noodle", value: "noodle"}
+  {text: "Rice", value: "rice", checked: true}
+  {text: "Hamburger", value: "hamburger", checked: true}
   {text: "Chicken", value: "chicken", checked: true, disabled: true}
   {text: "Beef", value: "beef", disabled: true}
 ]
-
 $scope.foodList = []
 
-$scope.selectAllCheckbox = ->
-  $scope.foodParamList.selectAll()
+$scope.selectAllCheckbox = (force) ->
+  $scope.foodParamList.selectAllCheckbox(force)
+  ifSwitchIcon()
   return
 
-$scope.reverseAllCheckbox = ->
-  $scope.foodParamList.reverseAll()
-  ifEnableSelectAllIcon()
+$scope.reverseAllCheckbox = (force) ->
+  $scope.foodParamList.clickCheckbox(null, force)
+  ifSwitchIcon()
+  return
+
+$scope.switchEnableCheckbox = (values) ->
+  if $scope.foodParamList.isEnabledCheckbox(values)
+    $scope.foodParamList.disableCheckbox(values)
+  else
+    $scope.foodParamList.enableCheckbox(values)
+  ifSwitchIcon()
   return
 
 $scope.changeCheckbox = (item) ->
   console.log "checked item=", item
-  ifEnableSelectAllIcon()
+  ifSwitchIcon()
   return
+return
 ```
 ```
 div
   | Food:
   div
     span(style="margin-left:10px")
-      basic-checkbox#selectAllFoods(checkbox-data="selectAllFoodsParam" checkbox-change="selectAllCheckbox()")
-
+      basic-checkbox(checkbox-data="selectAllFoodsParam" checkbox-change="selectAllCheckbox()")
     span(style="margin-left:10px")
-      basic-checkbox#selectAllFoods(checkbox-data="reverseFoodsParam" checkbox-change="reverseAllCheckbox()")
-
-  div
-    span(ng-repeat="foodCheckboxData in foodParamList" style="margin-left:10px")
-      basic-checkbox(checkbox-object="foodParamList" checkbox-name="foods"
-      checkbox-data="foodCheckboxData" checkbox-model="foodList"
-      checkbox-change="changeCheckbox(item)")
-  div
-  | {{foodList}}
+      basic-checkbox(checkbox-data="selectAllFoodsForceParam" checkbox-change="selectAllCheckbox(true)")
+    span(style="margin-left:10px")
+      basic-checkbox(checkbox-data="reverseFoodsParam" checkbox-change="reverseAllCheckbox()")
+    span(style="margin-left:10px")
+      basic-checkbox(checkbox-data="reverseFoodsForceParam" checkbox-change="reverseAllCheckbox(true)")
+    span(style="margin-left:10px")
+      basic-checkbox(checkbox-data="disableFoodsParam" checkbox-change="switchEnableCheckbox()")
+    span(style="margin-left:10px")
+      basic-checkbox(checkbox-data="disableRiceParam" checkbox-change="switchEnableCheckbox('rice')")
+    span(style="margin-left:10px")
+      basic-checkbox(checkbox-data="disableHCParam" checkbox-change="switchEnableCheckbox(['hamburger','chicken'])")
 ``` 
    
    
