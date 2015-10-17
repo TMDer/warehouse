@@ -59,33 +59,33 @@ common.basicCheckbox
 { text:"要顯示的文字", value: "點選後的值", checked: true/false, disabled: true/false }
 
 #### - checkboxObj 提供的 function
-**isSelectedCheckbox(values, force) 檢查元件是否有被選取**   
-values: checkbox 對應的 value， 可為字串或由字串組成的陣列，null 代表全部   
-force: true / false，當 checkbox 為 disabled 時，是否執行   
+  **isSelectedCheckbox(values, force) 檢查元件是否有被選取**   
+    values: checkbox 對應的 value， 可為字串或由字串組成的陣列，null 代表全部   
+    force: true / false，當 checkbox 為 disabled 時，是否執行   
    
-**isEnabledCheckbox(values) 檢查元件是否可被點選**   
-values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
+  **isEnabledCheckbox(values) 檢查元件是否可被點選**   
+    values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
 
-**selectCheckbox(values, force) 選取元件**   
-values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
-force: true / false，當 checkbox 為 disabled 時，是否執行   
+  **selectCheckbox(values, force) 選取元件**   
+    values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
+    force: true / false，當 checkbox 為 disabled 時，是否執行   
     
-**unSelectCheckbox(values, force) 反選取元件**   
-values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
-force: true / false，當 checkbox 為 disabled 時，是否執行   
+  **unSelectCheckbox(values, force) 反選取元件**   
+    values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
+    force: true / false，當 checkbox 為 disabled 時，是否執行   
    
-**selectAllCheckbox(force) : 全選/反全選 有相同 checkboxName 的元件**   
-force: true / false，當 checkbox 為 disabled 時，是否執行   
+  **selectAllCheckbox(force) : 全選/反全選 有相同 checkboxName 的元件**   
+    force: true / false，當 checkbox 為 disabled 時，是否執行   
 
-**clickCheckbox(values, force) 點擊元件**   
-values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
-force: true / false，當 checkbox 為 disabled 時，是否執行   
+  **clickCheckbox(values, force) 點擊元件**   
+    values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
+    force: true / false，當 checkbox 為 disabled 時，是否執行   
     
-**enableCheckbox(values) 將元件設成 enable**   
-values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
+  **enableCheckbox(values) 將元件設成 enable**   
+    values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
     
-**disableCheckbox(values) 將元件設成 disable**   
-values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
+  **disableCheckbox(values) 將元件設成 disable**   
+    values: checkbox 對應的 value，可為字串或由字串組成的陣列，null 代表全部   
    
 #### 使用範例
 
