@@ -59,6 +59,8 @@ common.basicCheckbox
 { text:"要顯示的文字", value: "點選後的值", checked: true/false, disabled: true/false }
 
 #### - checkboxObj 提供的 function
+* isSelectedCheckbox(values, force)
+** 
 * selectAll() : 全選/反全選 有相同 checkboxName 的元件
 * reverseAll()： 反選取 有相同 checkboxName 的元件
 
