@@ -30,7 +30,8 @@
 		![disable](./directive-images/step-inactive.png)
 	* edit：正在此步驟時(button 藍色)  
 		![process](./directive-images/step-edit.png)
-		
+   	
+* width: 設定 UI 的寬度 (default 為 100%)	
 ### Step block
 Step title 下方的所顯示的內容只要寫下 step directive 底下即可，如下方範例的`p`
 
