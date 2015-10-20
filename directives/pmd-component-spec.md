@@ -24,7 +24,7 @@ https://fortawesome.github.io/Font-Awesome/icons/
 
 
 ### - btnObject 支援的 function
-- toggleSpin: 旋轉/停止按鈕裡面的圖案
+** toggleSpin: 旋轉/停止按鈕裡面的圖案   
    
 #### 使用範例
 ```
