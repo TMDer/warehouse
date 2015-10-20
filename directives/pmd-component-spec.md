@@ -1,4 +1,4 @@
-## 選單： [basicButton](#basicButton) | [basicCheckbox](#basicCheckbox) | [basicDropdown](#basicDropdown) | [basicInput](#basicInput) | [basicRadio](#basicRadio)
+### 選單： [basicButton](#basicbutton) | [basicCheckbox](#basiccheckbox) | [basicDropdown](#basicdropdown) | [basicInput](#basicinput) | [basicRadio](#basicradio)
 
 # Basic Component
 
