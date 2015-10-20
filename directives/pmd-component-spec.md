@@ -7,7 +7,7 @@
 commonApp.basicBtn
 
 #### 參數說明
-* draft: 指定常用的按鈕樣式，會自動套入預設的 color 和 text
+* draft: 指定常用的按鈕樣式，會自動套入預設的 color 和 texts
 * color: 按鈕顏色
 * text: 顯示文字
 * fa: 按鈕圖示的 class
@@ -24,7 +24,7 @@ https://fortawesome.github.io/Font-Awesome/icons/
 
 
 ### - btnObject 支援的 function
-** toggleSpin: 旋轉/停止按鈕裡面的圖案   
+  **toggleSpin: 旋轉/停止按鈕裡面的圖案**   
    
 #### 使用範例
 ```
