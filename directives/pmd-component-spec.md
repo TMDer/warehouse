@@ -25,7 +25,12 @@ https://fortawesome.github.io/Font-Awesome/icons/
 true / false
    
 #### 使用範例
-    
+```
+$scope.syncBtnObject = {}
+$scope.synBtnClick = ->
+  $scope.syncBtnObject.toggleSpin()
+  return
+```
 ```
 basic-btn(draft="prev")
 basic-btn(draft="next")
@@ -35,7 +40,7 @@ basic-btn(draft="icon-create")
 basic-btn(draft="icon-delete")
 basic-btn(draft="icon-copy")
 basic-btn(draft="icon-edit")
-basic-btn(draft="icon-sync")
+basic-btn(draft="icon-sync" btn-object="syncBtnObject" ng-click="synBtnClick()") # 設置 btn-object
 basic-btn(color="purple", text="Home", fa="fa-home fa-fw")
 basic-btn(color="purple", text="Home", fa="fa-home fa-fw", ng-disabled="true")
 basic-btn(color="green", fa="fa-refresh")
