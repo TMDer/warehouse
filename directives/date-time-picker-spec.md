@@ -11,10 +11,10 @@ common.dateTimePicker
 
 ### 選填
 * isOpen: 回傳的資料類型 Boolean，date picker 開啟的依據
-* maxDate: 傳入的資料類型 {{String}}，許可的最大日期
-* minDate: 傳入的資料類型 {{String}}，許可的最小日期
+* maxDate: 傳入的資料類型 String / {{scope}}，許可的最大日期
+* minDate: 傳入的資料類型 String / {{scope}}，許可的最小日期
 * required: 傳入的資料類型 Boolean，用途是否使用 $vaild
-* timeZoneText: 傳入的資料類型 {{String}}，Datetime 最後顯示的文字，例如： Asia Taipei 、台北時間
+* timeZoneText: 傳入的資料類型 String / {{scope}}，Datetime 最後顯示的文字，例如： Asia Taipei 、台北時間
 
 ### Simple Code
 ```coffeescript
