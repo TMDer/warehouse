@@ -11,6 +11,7 @@ commonApp.basicBtn
 * color: 按鈕顏色
 * text: 顯示文字
 * fa: 按鈕圖示的 class
+* btnObject: 讓 basicBtn 設置支援 function 用的物件
  
 #### draft
 prev / next / cancel / submit / icon-create / icon-delete / icon-copy / icon-edit / icon-sync
@@ -21,8 +22,9 @@ gray(default) / green / purple
 #### - fa
 https://fortawesome.github.io/Font-Awesome/icons/
 
-#### - disabled
-true / false
+
+### - btnObject 支援的 function
+- toggleSpin: 旋轉/停止按鈕裡面的圖案
    
 #### 使用範例
 ```
