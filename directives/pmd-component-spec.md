@@ -186,6 +186,84 @@ div
 ``` 
    
    
+## ::basicDropdown  
+#### Module Name
+commonApp.basicDropdown
+   
+#### 參數說明
+* items(required): 下拉選單的選項，可為一般陣列或有 key 值的物件陣列
+```
+[1, 2, 3, 4]
+[{A: a1, B: b1, C: c1}, {A: a2, B: b2}, {A: a3, C: c3}]
+```
+* item-key: 配合 items 使用，如果內部資料是 Object，則需要調入要查找的 key
+```
+[{A: a1, B: b1, C: c1}, {A: a2, B: b2}, {A: a3, C: c3}]
+item-key = A 時 => [a1, a2, a3]
+item-key = B 時 => [b1, b2]
+item-key = C 時 => [c1, c3]
+```
+* dropdown-change: 使用者點選後觸發的動作 (Function)
+* dropdown-model: 下拉選單綁定的值
+* dropdown-disabled: 是否要停用這個物件(Boolean)，預設值是`false`
+* title: 當沒有綁定 dropdown-model 或 其實為空的時候，所要顯示的文字
+
+
+#### 使用範例
+```
+$scope.dropdownParam = {
+  items1: [1, 3, 443, "aaa"]
+  items2: [
+    {A: "a1", B: "b1", C: "c1"}
+    {A: "a2", B: "b2", C: "c2"}
+    {A: "a3", C: "Cccccccccc cccccccccccccccccc"}
+  ]
+  dropdownDisabled: false
+  selectedItem: {
+    a: "aaa"
+    b: ""
+    c: "c2"
+  }
+  itemKey1: "B"
+  itemKey2: "C"
+}
+$scope.dropdownDisabled = false
+
+$scope.changeDropdown = (value, index, event) ->
+  $scope.dropdownDisabled = true
+  return
+
+$scope.changeDropdown2 = ->
+  # return false 可以阻止 basicDropdown 把值設到 ng-model(如果有的話)
+  console.log "dropdownParam.selectedItem.a=", $scope.dropdownParam.selectedItem.a
+  console.log "dropdownParam.selectedItem.b=", $scope.dropdownParam.selectedItem.b
+  console.log "dropdownParam.selectedItem.c=", $scope.dropdownParam.selectedItem.c
+  $scope.dropdownParam.selectedItem.c = "c1"
+  return false
+```
+```
+div
+  | 選擇之後 disabled
+  div
+    basic-dropdown(title="Please select a number" items="dropdownParam.items1"
+    dropdown-change="changeDropdown"
+    dropdown-model="dropdownParam.selectedItem.a" dropdown-disabled="dropdownDisabled")
+    | selectedItem.a= {{dropdownParam.selectedItem.a}}
+div
+  | dropdown-change 回傳 false 的下拉選單,並改變 $scope. selectedItem3 = “c1”
+  div
+    basic-dropdown(items="dropdownParam.items2" item-key="dropdownParam.itemKey1"
+    dropdown-change="changeDropdown2" dropdown-model="dropdownParam.selectedItem.b")
+    | selectedItem.b= {{dropdownParam.selectedItem.b}}
+div
+  | normal
+  div
+    basic-dropdown(items="dropdownParam.items2" item-key="dropdownParam.itemKey2"
+    dropdown-model="dropdownParam.selectedItem.c")
+    | selectedItem.c= {{dropdownParam.selectedItem.c}}
+```
+   
+   
 ## ::basicInput
 #### Module Name
 commonApp.basicInput
@@ -284,31 +362,3 @@ div
     div(ng-repeat="petRadioData in petRadioDataList")
     basic-radio(name="pet", radio-data="petRadioData", radio-change="changeRadio(item)", radio-model="target.pet", radio-disabled="petRadioData.disabled")
 ```
-
-## ::basicDropdown  
-#### Module Name
-commonApp.basicDropdown
-
-
-#### 參數說明
-* items(required): Dropdown Items，項目不可重複 (Array)  
-	`[1, 3, , 443, "test"]`
-`[{A: a1, B: b1, C: c1}, {A: a2, B: b2}, {A: a3, C: c3}]`
-* item-key: 配合 items 使用，如果內部資料是 Object，則需要調入要查找的 key。
-	例如要找尋`[{A: a1, B: b1, C: c1}, {A: a2, B: b2}, {A: a3, C: c3}]` 中的 `A`則傳入`A`
-
-* defalut-position: 預設顯示的項目 (Int)，預設值是`0`
-* selected-position(required): 目前選擇項目的位置 (Array 中的第幾項, Int)
-* status: dropdown 的狀態(default, disabled, locked)，預設值是`default`
-	* default:  
-	![default](./directive-images/dropdown-default.png)  
-	* disabled:  
-	![default](./directive-images/dropdown-disabled.png)  
-	* locked:  
-	![default](./directive-images/dropdown-locked.png)  
-* pmd-change: 使用者點選後觸發的動作 (Function)
-* disabled: 是否要停用這個物件(Boolean)，預設值是`false`
-
-
-#### 使用方式
-`basic-dropdown(item-key="key" status="default" items="trafficValueArgs", defalut-position="0", selected-position="trafficTypePosition" pmd-change="selectedWebsiteTraffic(trafficArgs[trafficTypePosition], trafficTypePosition)")`
