@@ -1,4 +1,4 @@
-選單： ![basicButton](#basicButton)
+選單： [basicButton](#basicButton)
 
 # Basic Component
 
