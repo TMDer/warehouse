@@ -15,14 +15,17 @@ common.dateTimePicker
 * minDate: 傳入的資料類型 String / {{scope}}，許可的最小日期
 * required: 傳入的資料類型 Boolean，用途是否使用 $vaild
 * postfix: 傳入的資料類型 String / {{scope}}，Datetime 最後顯示的文字，例如： Asia Taipei 、台北時間
+* useKeyboardInput: 傳入的資料類型 Boolean，是否可以用鍵盤輸入日期和時間，預設是 true
 
 ### Simple Code
 ```coffeescript
 $scope.min = "2015-10-05"
+$scope.max = moment().format("YYYY-MM-DD")
+$scope.useKeyboardInput = false
 ```
 
 ```jade
-date-time-picker(ng-model="dateTimeModel", min-date="{{min}}" , max-date="2015-10-21")
+date-time-picker(ng-model="dateTimeModel", min-date="{{min}}" , max-date="{{max}}", use-keyboard-input="{{useKeyboardInput}}")
 ```
 
 
