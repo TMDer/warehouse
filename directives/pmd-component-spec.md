@@ -275,34 +275,45 @@ div
 commonApp.basicInput
 
 #### 參數說明
-* noticeDom: 想要設為 [notice 訊息 DOM] 的搜尋.find()條件
+- width: 指定 input 寬度，預設 100%
+- height: 指定 input 高度，預設 30px
 
-#### - noticeDom 參數
-* noticeColor: "red" / "green" 要顯示的訊息顏色，預設為無(黑色)
+#### 在 basic-input 裡面支援的內容
+- .input-icon： 要放在 input 裡面的圖案
+- .input-notice： 要放在 input 底下的訊息
+- 
+
+#### .input-icon 參數(因應 .fa 的圖案位置需要調整):
+- iconWidth: 設定 width
+- iconSize: 設定 font-size
+- iconTop: 設定 padding-top
+- iconLeft: 設定 padding-left
+
    
 #### 使用範例
 
 ```
 form(name="demoForm" novalidate)
-  input(basic-input type="text" name="name" placeholder="Please insert your name"
-  ng-model="basicInput.name" notice-dom="#notice1, #notice2"
-  ng-minlength="3" required)
+  # input 佔滿一行
+  .form-group(basic-input)
+    # 圖示
+    i.input-icon.fa.fa-fw.fa-phone(icon-width="30px" icon-size="20px" icon-top="1px" icon-left="10px")
 
-  #notice1(notice-color ="red" ng-show="demoForm.name.$error.required") Can not be empty
-  #notice2(notice-color ="green" ng-show="demoForm.name.$error.minlength") Min-length must >= 3
+    input(type="text" name="phone" placeholder="Please insert your phone"
+    ng-model="basicInput.phone" ng-minlength="7" required)
 
-  input(basic-input type="text" name="phone" placeholder="Please insert your phone"
-  ng-model="basicInput.phone" notice-dom="#notice3, #notice4"
-  ng-minlength="7" required)
+    # 提示訊息
+    .input-notice This is normal notice
+    .input-notice(notice-color ="green" ng-show="demoForm.phone.$error.minlength") Min-length must >= 7
 
-  #notice3 This is normal notice
-  #notice4(notice-color ="green" ng-show="demoForm.phone.$error.minlength") Min-length must >= 7
-
-  textarea(basic-input name="address" placeholder="Please insert your address"
-  width="68%" height="100px"
-  ng-model="basicInput.address")
-
-  | {{basicInput}}
+  # 指定 input 寬度，讓 input 併排
+  .form-group
+    span(basic-input width="120px")
+      | this is disable 1:
+      input(type="text" name="love" placeholder="This is disabled" disabled)
+    span(basic-input width="150px" style="margin-left:10px")
+      | this is disable 2:
+      input(type="text" name="hate" placeholder="This is disabled")
 
   basic-btn(draft="submit" ng-click="getInputValue()" ng-disabled="demoForm.$invalid")
 ```   
