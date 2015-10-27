@@ -138,17 +138,44 @@ $scope.foodParamList = [
 ]
 $scope.foodList = []
 
-$scope.selectAllCheckbox = (force) ->
-  $scope.foodParamList.selectAllCheckbox(force)
+$scope.selectAllCheckbox = (data, event) ->
+  $scope.foodParamList.selectAllCheckbox()
   ifSwitchIcon()
   return
 
-$scope.reverseAllCheckbox = (force) ->
-  $scope.foodParamList.clickCheckbox(null, force)
+$scope.selectAllCheckboxForce = (data, event) ->
+  $scope.foodParamList.selectAllCheckbox(true)
   ifSwitchIcon()
   return
 
-$scope.switchEnableCheckbox = (values) ->
+$scope.reverseAllCheckbox = (data, event) ->
+  $scope.foodParamList.clickCheckbox(null)
+  ifSwitchIcon()
+  return
+
+$scope.reverseAllCheckboxForce = (data, event) ->
+  $scope.foodParamList.clickCheckbox(null, true)
+  ifSwitchIcon()
+  return
+
+$scope.switchEnableCheckboxAll = (data, event) ->
+  if $scope.foodParamList.isEnabledCheckbox()
+    $scope.foodParamList.disableCheckbox()
+  else
+    $scope.foodParamList.enableCheckbox()
+  ifSwitchIcon()
+  return
+
+$scope.switchEnableCheckboxRice = (data, event) ->
+  if $scope.foodParamList.isEnabledCheckbox("rice")
+    $scope.foodParamList.disableCheckbox("rice")
+  else
+    $scope.foodParamList.enableCheckbox("rice")
+  ifSwitchIcon()
+  return
+
+$scope.switchEnableCheckboxHC = (data, event) ->
+  values = ["hamburger", "chicken"]
   if $scope.foodParamList.isEnabledCheckbox(values)
     $scope.foodParamList.disableCheckbox(values)
   else
@@ -167,28 +194,28 @@ div
   | Food:
   div
     span(style="margin-left:10px")
-      basic-checkbox(checkbox-data="selectAllFoodsParam" checkbox-change="selectAllCheckbox()")
+      basic-checkbox(checkbox-data="selectAllFoodsParam" checkbox-change="selectAllCheckbox")
     span(style="margin-left:10px")
-      basic-checkbox(checkbox-data="selectAllFoodsForceParam" checkbox-change="selectAllCheckbox(true)")
+      basic-checkbox(checkbox-data="selectAllFoodsForceParam" checkbox-change="selectAllCheckboxForce")
     span(style="margin-left:10px")
-      basic-checkbox(checkbox-data="reverseFoodsParam" checkbox-change="reverseAllCheckbox()")
+      basic-checkbox(checkbox-data="reverseFoodsParam" checkbox-change="reverseAllCheckbox")
     span(style="margin-left:10px")
-      basic-checkbox(checkbox-data="reverseFoodsForceParam" checkbox-change="reverseAllCheckbox(true)")
+      basic-checkbox(checkbox-data="reverseFoodsForceParam" checkbox-change="reverseAllCheckboxForce")
     span(style="margin-left:10px")
-      basic-checkbox(checkbox-data="disableFoodsParam" checkbox-change="switchEnableCheckbox()")
+      basic-checkbox(checkbox-data="disableFoodsParam" checkbox-change="switchEnableCheckboxAll")
     span(style="margin-left:10px")
-      basic-checkbox(checkbox-data="disableRiceParam" checkbox-change="switchEnableCheckbox('rice')")
+      basic-checkbox(checkbox-data="disableRiceParam" checkbox-change="switchEnableCheckboxRice")
     span(style="margin-left:10px")
-      basic-checkbox(checkbox-data="disableHCParam" checkbox-change="switchEnableCheckbox(['hamburger','chicken'])")
+      basic-checkbox(checkbox-data="disableHCParam" checkbox-change="switchEnableCheckboxHC")
 
-    div
-      span(ng-repeat="foodCheckboxData in foodParamList" style="margin-left:10px")
-        basic-checkbox(checkbox-object="foodParamList" checkbox-name="foods"
-        checkbox-data="foodCheckboxData" checkbox-model="foodList"
-        checkbox-change="changeCheckbox(item)")
-    div
-    | amount: {{foodParamList.selectedAmount}}
-    | value: {{foodList}}
+  div
+    span(ng-repeat="foodCheckboxData in foodParamList" style="margin-left:10px")
+      basic-checkbox(checkbox-object="foodParamList" checkbox-name="foods"
+      checkbox-data="foodCheckboxData" checkbox-model="foodList"
+      checkbox-change="changeCheckbox(item)")
+  div
+  | amount: {{foodParamList.selectedAmount}}
+  | value: {{foodList}}
 ``` 
    
    
