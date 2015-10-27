@@ -352,7 +352,7 @@ commonApp.basicRadio
 
 #### 參數說明
 * radioData(required): 元件要顯示的內容陣列
-* name(required): 元件名稱(要設定才能讓 radio 裡的項目綁定為一組)
+* radioName(required): 元件名稱(要設定才能讓 radio 裡的項目綁定為一組)
 * radioModel: 元件被選取後要綁定的 scope 變數
 * radioChange: 元件變更選取項目時要觸發的 function
 * radioDisabled: 將此元件變更爲不可選取狀態
