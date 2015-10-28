@@ -14,12 +14,13 @@ common.imgUpload
 #### 使用範例
 ```
     $scope.imgUploadConfig =
-      images: {}
-      imagesResult: {}
+      imageData:
+        images: null
+        imagesResult: {}
 
     $sails.get("/image/index").success (data) ->
       $scope.adImages = data.adImages
-      $scope.imgUploadConfig.images = _.map data.adImages, (v,i)->
+      $scope.imgUploadConfig.imageData.images = _.map data.adImages, (v,i)->
         v.imgBase64 = v.previewImageBase64
         return v
       return
@@ -38,7 +39,7 @@ common.imgUpload
       next true
 ```
 ```
-img-upload(images="creativeImages" image-upload-fn="imageUploadFn" images-result="imagesResult" delete-image-fn="deleteImageFn" selected-fn="selectedFn")
+img-upload(image-data="imgUploadConfig.imageData" image-upload-fn="imageUploadFn" delete-image-fn="deleteImageFn" selected-fn="selectedFn")
 ```
    
   
