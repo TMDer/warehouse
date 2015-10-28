@@ -22,7 +22,7 @@
 
 #### 範例
 ```
-# 故意執行會回傳 error 的 post
+#故意執行會回傳 error 的 post
 requestServ.request("/adMgmt/updateAd", {id: 1})
 .error((data, id) ->
   console.error "Got Error data", data
@@ -30,7 +30,7 @@ requestServ.request("/adMgmt/updateAd", {id: 1})
   return
 )
 
-# 成功取得 objective 例表後 顯示在 jade 頁面
+#成功取得 objective 例表後 顯示在 jade 頁面
 requestServ.request("/adMgmt/campaignObjective")
 .success((data) ->
   $scope.campaignObjectives = _.keys(data)
