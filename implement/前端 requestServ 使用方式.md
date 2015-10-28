@@ -1,20 +1,5 @@
 因應後端回傳的資料格式，包裝 $sails.get / $sails.pot 及後續的 success / error callback 處理
 
-#### 後端 okWithSocket 回傳的資料格式 (未經過包裝)
-```
-{
-  ....
-}
-```
-
-#### 後端 serverErrorWithSocket 回傳的資料格式
-```
-{
-  $error: data
-  $id: id
-}
-```
-
 ### requestServ.request(url, param)
 
 #### 參數
