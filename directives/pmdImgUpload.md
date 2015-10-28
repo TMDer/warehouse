@@ -13,14 +13,6 @@ common.imgUpload
  
 #### 使用範例
 ```
-    # mk-model
-    $scope.modalConfig =
-      zIndex: 10
-      effect: "mkmd-effect-susab"
-      style:
-        height: '97%'
-        width: "100%"
-
     $scope.imgUploadConfig =
       images: {}
       imagesResult: {}
@@ -44,19 +36,6 @@ common.imgUpload
         return next success
     $scope.selectedFn = (image, next)->
       next true
-
-    $scope.openUploadModal = ->
-      $("#uploadModalTriggerBtn").click()
-      return
-    $scope.closeModal = ->
-      $('#uploadModalCloseBtn').click()
-      return
-
-    $scope.afterCloseHandler = ->
-      console.log "afterCloseHandler"
-
-    $scope.beforeCloseHandler = ->
-      console.log "beforeCloseHandler"
 ```
 ```
 img-upload(images="creativeImages" image-upload-fn="imageUploadFn" images-result="imagesResult" delete-image-fn="deleteImageFn" selected-fn="selectedFn")
