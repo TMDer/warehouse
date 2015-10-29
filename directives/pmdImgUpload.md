@@ -5,8 +5,8 @@
 common.imgUpload
 
 #### 參數說明
-* images: 圖片資訊的陣列，從DB撈出來的資料
-* imagesResult: 選擇的圖片, 單一值
+* imgUploadConfig.imageData.images: 圖片資訊的陣列，從DB撈出來的資料
+* imgUploadConfig.imageData.imagesResult: 選擇的圖片, 單一值
 * imageUploadFn: 上傳圖片的 function, 最後要回傳一個 callback
 * deleteImageFn: 刪除圖片的 function, 最後要回傳一個 callback
 * SelectedFn: 選擇圖片後的 function, 最後要回傳一個 callback
