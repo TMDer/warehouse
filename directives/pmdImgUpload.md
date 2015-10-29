@@ -121,7 +121,7 @@ img-upload(image-data="imgUploadConfig.imageData" image-upload-fn="imageUploadFn
             i.fa.fa-times(ng-click="closeModal()")
 
         #mk-preview-wrap
-          img-upload(img-upload-config="imgUploadConfig" images="images" image-upload-fn="imageUploadFn" images-result="imagesResult" delete-image-fn="deleteImageFn" selected-fn="selectedFn")
+          img-upload(image-data="imgUploadConfig.imageData" image-upload-fn="imageUploadFn" delete-image-fn="deleteImageFn" selected-fn="selectedFn")
 
 ```
 
