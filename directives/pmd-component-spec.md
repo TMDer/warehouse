@@ -240,6 +240,7 @@ item-key = C 時 => [c1, c3]
 * dropdown-model: 下拉選單綁定的值
 * dropdown-disabled: 是否要停用這個物件(Boolean)，預設值是`false`
 * title: 當沒有綁定 dropdown-model 或 其實為空的時候，所要顯示的文字
+* width: 下拉選單寬度 
 
 
 #### 使用範例
