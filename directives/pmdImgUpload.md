@@ -6,7 +6,7 @@ common.imgUpload
 
 #### 參數說明
 * imageData: 為一個 image data 的 object
-* imageData.images: 圖片資訊的陣列，從DB撈出來的資料
+* imageData.images: 圖片資訊的陣列(初始化時要顯示的圖片列表)
 * imageData.imagesResult: 選擇的圖片, 單一值
 * imageUploadFn: 上傳圖片的 function, 最後要回傳一個 callback
 * deleteImageFn: 刪除圖片的 function, 最後要回傳一個 callback
@@ -19,6 +19,7 @@ common.imgUpload
         images: []
         imagesResult: {}
 
+    # 設置要在 img-upload 上顯示的預設圖片列表
     $sails.get("/image/index").success (data) ->
       $scope.adImages = data.adImages
       $scope.imgUploadConfig.imageData.images = _.map data.adImages, (value, key)->
