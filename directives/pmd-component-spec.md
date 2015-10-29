@@ -351,58 +351,68 @@ form(name="demoForm" novalidate)
 commonApp.basicRadio
 
 #### 參數說明
-* radioData(required): 元件要顯示的內容陣列
-* radioName(required): 元件名稱(要設定才能讓 radio 裡的項目綁定為一組)
-* radioModel: 元件被選取後要綁定的 scope 變數
-* radioChange: 元件變更選取項目時要觸發的 function
-* radioDisabled: 將此元件變更爲不可選取狀態
-
-#### - radioData 格式
-{ text:"要顯示的文字", value: "點選後的值" }
-
-#### - radioDisabled 格式
-true / false
-
+- radioData(required): 元件要顯示的內容陣列
+- radioName(required): 元件名稱(要設定才能讓 radio 裡的項目綁定為一組)
+- radioModel: 元件被選取後要綁定的 scope 變數
+- radioChange: 元件變更選取項目時要觸發的 function
+   
+#### - radioData 物件格式
+- text: [string] 要顯示的文字
+- value: [*] 點選後的值 (radio 的 value)
+- selected: [boolean] 是否選取
+- disabled: [boolean] 是否無法點選
+   
 #### 使用範例
 ```
-$scope.changeRadio = (item) ->
-  console.log "selected item=", item
-  console.log "$scope.target=", $scope.target
+$scope.changeRadio = (data, event) ->
+  console.log "selected data=", data
+  console.log "selected event=", event
+  # 測試 radio-data 的雙向綁定
+  $scope.petRadioDataList[0].disabled = true
+  $scope.petRadioDataList[1].disabled = false
+  $scope.petRadioDataList[1].text = "Pika"
+  $scope.petRadioDataList[1].value = "pika"
+  # 測試 radio-model 的雙向綁定
+  $scope.target.age = ">=20"
   return
-  
+
 $scope.sexRadioDataList = [
   {text: "Man", value: "man"},
-  {text: "Woman", value: "woman"},
+  # 測試兩個 item 裡面都有 checked= true
+  {text: "Woman", value: "woman", checked: true}
+  {text: "Other", value: "", checked: true}
 ]
 
 $scope.ageRadioDataList = [
-  {text: "<12", value: "12"},
-  {text: "<20", value: "19"},
-  {text: ">=20", value: "20"}
+  {text: "<12", value: "<12"}
+  {text: "<20", value: "<20", checked: true}
+  {text: ">=20", value: ">=20"}
 ]
 
 $scope.petRadioDataList = [
-  {text: "Dog", value: "dog"},
-  {text: "Cat", value: "cat", disabled: true},
+  {text: "Dog", value: "dog", disabled: true}
+  {text: "Cat", value: "cat", disabled: true}
 ]
 
 $scope.target = {
-  sex: "man"
+  # 值故意和 $scope.ageRadioDataList 裡 checked 的 value 不一樣
   age: "12"
   pet: ""
 }
-
-$scope.disabledAll = true
 ```
 ```
 div
-  | Sex:
-  div(ng-repeat="sexRadioData in sexRadioDataList")
-    basic-radio(name="sex", radio-data="sexRadioData", radio-change="changeRadio(item)", radio-model="target.sex")
+  | Sex(不綁 radio-model):
+  spane(ng-repeat="sexRadioData in sexRadioDataList")
+    basic-radio(radio-name="sex", radio-data="sexRadioData", radio-change="changeRadio")
+div
   | Age:
-    div(ng-repeat="ageRadioData in ageRadioDataList")
-    basic-radio(name="age", radio-data="ageRadioData", radio-model="target.age")
+  div(ng-repeat="ageRadioData in ageRadioDataList")
+    basic-radio(radio-name="age", radio-data="ageRadioData", radio-model="target.age")
+div
   | Pet:
-    div(ng-repeat="petRadioData in petRadioDataList")
-    basic-radio(name="pet", radio-data="petRadioData", radio-change="changeRadio(item)", radio-model="target.pet", radio-disabled="petRadioData.disabled")
+  div(ng-repeat="petRadioData in petRadioDataList")
+    basic-radio(radio-name="pet", radio-data="petRadioData", radio-model="target.pet")
+div
+  | {{target}}
 ```
