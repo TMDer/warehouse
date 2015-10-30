@@ -183,8 +183,8 @@ $scope.switchEnableCheckboxHC = (data, event) ->
   ifSwitchIcon()
   return
 
-$scope.changeCheckbox = (item) ->
-  console.log "checked item=", item
+$scope.changeCheckbox = (data, event) ->
+  console.log "checked data=", data
   ifSwitchIcon()
   return
 return
