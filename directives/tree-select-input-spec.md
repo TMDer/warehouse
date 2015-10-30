@@ -34,7 +34,7 @@
 
 **In jade Template**
 
-    tree-select-input(input-param="inputParam", tree-options="treeOptions", tree-data="dataForTheTree", no-buton="false",
+    tree-select-input(input-param="inputParam", tree-options="treeOptions", tree-data="dataForTheTree", no-button="false",
      selected-data="treeSelectedData", init-selected-data="initTreeSelectedData", filter-comparator="inputParam.filterComparator")
 
 ## Tree data syntax
