@@ -55,12 +55,18 @@
 * tree-options：  
 	*optional*，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。
 
+* tree-width：  
+	*optional*，設定套件的寬度。
+
 * no-button：  
 	*optional*。(Boolean)，預設為`false`。值為`true`的話，會隱藏 toggle tree 的按鈕。
 
-* on-select：
-	*optional*，當選取項目時會執行的 function
+* tree-disable：  
+	*optional*，會設定 tree 是否可用 enable 或 disable。
 
+* on-select：  
+	*optional*，當選取項目時會執行的 function，回傳的參數會有項目的資料和是否被選取的 boolean 值。
+	`true` 是被選取，`false`反之
 * tree-data：  
 	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。
 
