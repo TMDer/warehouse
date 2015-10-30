@@ -212,7 +212,7 @@ div
     span(ng-repeat="foodCheckboxData in foodParamList" style="margin-left:10px")
       basic-checkbox(checkbox-object="foodParamList" checkbox-name="foods"
       checkbox-data="foodCheckboxData" checkbox-model="foodList"
-      checkbox-change="changeCheckbox(item)")
+      checkbox-change="changeCheckbox")
   div
   | amount: {{foodParamList.selectedAmount}}
   | value: {{foodList}}
