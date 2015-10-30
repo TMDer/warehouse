@@ -360,7 +360,7 @@ commonApp.basicRadio
 #### - radioData 物件格式
 - text: [string] 要顯示的文字
 - value: [*] 點選後的值 (radio 的 value)
-- selected: [boolean] 是否選取
+- checked: [boolean] 是否選取
 - disabled: [boolean] 是否無法點選
    
 #### 使用範例
