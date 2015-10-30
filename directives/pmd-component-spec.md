@@ -64,6 +64,10 @@ common.basicCheckbox
 #### - checkboxData 格式
 { text:"要顯示的文字", value: "點選後的值", checked: true/false, disabled: true/false }
 
+#### - checkboxChange 可以取得的 callback 參數
+- data: 所選取的資料
+- event: 所選取的 checkbox event
+
 #### - checkboxObj 提供的 function
   **isSelectedCheckbox(values, force) 檢查元件是否有被選取**   
     values: checkbox 對應的 value， 可為字串或由字串組成的陣列，null 代表全部   
@@ -366,6 +370,10 @@ commonApp.basicRadio
 - value: [*] 點選後的值 (radio 的 value)
 - checked: [boolean] 是否選取
 - disabled: [boolean] 是否無法點選
+
+#### - radioChange 可以取得的 callback 參數
+- data: 所選取的資料
+- event: 所選取的 checkbox event
    
 #### 使用範例
 ```
