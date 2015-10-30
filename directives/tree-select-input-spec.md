@@ -11,6 +11,9 @@
       	notice: "Enter your page, app, or event names"
 		filterComparator: false
 		dataKey: "name"
+		notice: "kk"
+		pattern: "[0-9]"
+		noticeColor: "red"
 
 	$scope.treeOptions =
 		dirSelectable: false
@@ -34,8 +37,8 @@
 
 **In jade Template**
 
-    tree-select-input(input-param="inputParam", tree-options="treeOptions", tree-data="dataForTheTree", no-button="false",
-     selected-data="treeSelectedData", init-selected-data="initTreeSelectedData", filter-comparator="inputParam.filterComparator")
+	tree-select-input(input-param="inputParam", tree-options="treeOptions", tree-data="dataForTheTree", no-button="false", on-select="treeSelect()",
+	 selected-data="treeSelectedData", init-selected-data="initTreeSelectedData", filter-comparator="inputParam.filterComparator")
 
 ## Tree data syntax
 欄位可以自由設定，但是一定要配合使用 input-param 中的 dateKey 參數。其中子項目的資料，一定要用`children`欄位來包裝(array)。而且每筆資料都必須要有`id`欄位，其值不能相同。其中可以對每筆資料設定`tooltip`，其欄位就是`tooltip`。
@@ -43,14 +46,20 @@
 
 ## Attributes
 * input-param：  
-	*optional*，parameter about input，it can set `placeholder`, `notice`, `dataKey`  
- 	
-	`dataKey`用來設定 treedata 要顯示出哪個欄位的資料
+	*optional*，parameter about input，it can set `placeholder`
+	`notice`：設定 notice 所顯示的資訊
+	`dataKey`：設定 treedata 要顯示出哪個欄位的資料
+	`pattern`：設定 input 欄位的正則表達式
+	`noticeColor`：設定 notice 訊息的顏色，支援`red`和`green`，當沒有設定時，會預設黑色
+	
 * tree-options：  
 	*optional*，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。
 
-* noButton：  
+* no-button：  
 	*optional*。(Boolean)，預設為`false`。值為`true`的話，會隱藏 toggle tree 的按鈕。
+
+* on-select：
+	*optional*，當選取項目時會執行的 function
 
 * tree-data：  
 	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。
