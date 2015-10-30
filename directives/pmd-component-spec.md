@@ -242,6 +242,10 @@ item-key = C 時 => [c1, c3]
 * title: 當沒有綁定 dropdown-model 或 其實為空的時候，所要顯示的文字
 * width: 下拉選單寬度 
 
+#### dropdown-change 可以取得的 callback 參數
+- value: 選取的值
+- index: 選取的 inedx
+- event: event 事件
 
 #### 使用範例
 ```
