@@ -3,7 +3,7 @@
 * angular-tree-control
 * basicInput
 
-### Usage
+## Usage
 **In Angular Controller**
 
 	$scope.inputParam =
@@ -17,17 +17,17 @@
 		...
 
 	$scope.dataForTheTree = [
-	    { "name" : "Joe", "id": 001, "age" : "21", "children" : [
-	        { "name" : "Smith", "id": 011, "age" : "42", "children" : [] },
-	        { "name" : "Gary", "id": 012, "age" : "21", "children" : [
-	            { "name" : "Jenifer", "id": 121, "age" : "23", "children" : [
-	                { "name" : "Dani", "id": 1211, "age" : "32", "children" : [] },
-	                { "name" : "Max", "id": 1212, "age" : "34", "children" : [] }
+	    { "name" : "Joe", "id": 001, "tooltip": "333", "age" : "21", "children" : [
+	        { "name" : "Smith", "id": 011, "tooltip": "333", "age" : "42", "children" : [] },
+	        { "name" : "Gary", "id": 012, "tooltip": "333", "age" : "21", "children" : [
+	            { "name" : "Jenifer", "id": 121, "tooltip": "333", "age" : "23", "children" : [
+	                { "name" : "Dani", "id": 1211, "tooltip": "333", "age" : "32", "children" : [] },
+	                { "name" : "Max", "id": 1212, "tooltip": "333", "age" : "34", "children" : [] }
 	            ]}
 	        ]}
 	    ]},
-	    { "name" : "Albert", "id": 002, "age" : "33", "children" : [] },
-	    { "name" : "Ron", "id": 003, "age" : "29", "children" : [] }
+	    { "name" : "Albert", "id": 002, "tooltip": "333", "age" : "33", "children" : [] },
+	    { "name" : "Ron", "id": 003, "tooltip": "333", "age" : "29", "children" : [] }
 	];
 	
 	$scope.initTreeSelectedData = [{id: "005"}, {id: "003"}]
@@ -37,7 +37,11 @@
     tree-select-input(input-param="inputParam", tree-options="treeOptions", tree-data="dataForTheTree", no-buton="false",
      selected-data="treeSelectedData", init-selected-data="initTreeSelectedData", filter-comparator="inputParam.filterComparator")
 
-### Attributes
+## Tree data syntax
+欄位可以自由設定，但是一定要配合使用 input-param 中的 dateKey 參數。其中子項目的資料，一定要用`children`欄位來包裝(array)。而且每筆資料都必須要有`id`欄位，其值不能相同。其中可以對每筆資料設定`tooltip`，其欄位就是`tooltip`。
+
+
+## Attributes
 * input-param：  
 	*optional*，parameter about input，it can set `placeholder`, `notice`, `dataKey`  
  	
@@ -49,7 +53,8 @@
 	*optional*。(Boolean)，預設為`false`。值為`true`的話，會隱藏 toggle tree 的按鈕。
 
 * tree-data：  
-	**required**，用來設定 tree 的資料。其欄位可以自由設定。但是子資料的話，一定要用`children`欄位來包裝(array)。而且每筆資料都必須要有`id`欄位，其值不能相同。
+	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。
+
 * selected-data：  
 	**required**，用於綁定被選取項目的資料，格式為 array
 * init-selected-data：  
