@@ -66,7 +66,7 @@
 
 * on-select：  
 	*optional*，當選取或取消項目時會執行的 function，回傳的參數會有項目的資料和是否被選取的 boolean 值。
-	`true` 是被選取，`false`反之
+	`true` 是被選取，`false`則是被取消
 * tree-data：  
 	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。
 
