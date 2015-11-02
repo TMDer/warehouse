@@ -37,7 +37,7 @@
 	
 	$scope.treeSelect = (node, selected) ->
 	    console.log "node = ", node, selected
-            return
+	    return
 
 **In jade Template**
 
