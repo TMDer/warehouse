@@ -34,10 +34,14 @@
 	];
 	
 	$scope.initTreeSelectedData = [{id: "005"}, {id: "003"}]
+	
+	$scope.treeSelect = (node, selected) ->
+	    console.log "node = ", node, selected
+            return
 
 **In jade Template**
 
-	tree-select-input(input-param="inputParam", tree-options="treeOptions", tree-data="dataForTheTree", no-button="false", on-select="treeSelect()",
+	tree-select-input(input-param="inputParam", tree-options="treeOptions", tree-data="dataForTheTree", no-button="false", on-select="treeSelect",
 	 selected-data="treeSelectedData", init-selected-data="initTreeSelectedData", filter-comparator="inputParam.filterComparator")
 
 ## Tree data syntax
