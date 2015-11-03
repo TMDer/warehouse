@@ -13,6 +13,8 @@ common.imgUpload
 * SelectedFn: 選擇圖片後的 function, 最後要回傳一個 callback
  
 #### 使用範例
+務必引入 Upload
+
 ```
     $scope.imgUploadConfig =
       imageData:
