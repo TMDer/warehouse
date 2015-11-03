@@ -87,7 +87,7 @@
 	`noticeColor`：設定 notice 訊息的顏色，支援`red`和`green`，當沒有設定時，會預設黑色  
 	
 * tree-options：  
-	**required**，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。
+	*optional*，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。
 
 * tree-data：  
 	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。
