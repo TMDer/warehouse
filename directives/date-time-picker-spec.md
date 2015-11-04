@@ -29,16 +29,19 @@ scope.ngModel = moment().toDate()
 * formElementName: 傳入的資料類型 String，自訂 element 的 Form name，預設是 datetimepicker-亂數
 * errorMessage: 傳入的資料類型 String，設定 required error 的訊息，預設是 Oops, something error.
 * useErrorMsg: 傳入的資料類型 Boolean，是否顯示 reuqired error 的訊息，預設是 false
+* changeFn: 傳入的資料類型 fucntion 表達式，ngModel 有更動時觸發
 
 ### Simple Code
 ```coffeescript
 $scope.min = "2015-10-05" | moment("2015-10-05").toDate() | "2015-10-14T00:00:00.000Z"
 $scope.max = 同 $scope.min
 $scope.useKeyboardInput = false
+$scope.useChangeFn = ->
+  console.log "get change" + Date.now()
 ```
 
 ```jade
-date-time-picker(ng-model="dateTimeModel", min-date="min", max-date="max", use-keyboard-input="{{useKeyboardInput}}", use-error-msg="true", error-message="Test error message.")
+date-time-picker(ng-model="dateTimeModel", min-date="min", max-date="max", change-fn="useChangeFn", use-keyboard-input="{{useKeyboardInput}}", use-error-msg="true", error-message="Test error message.")
 ```
 
 
