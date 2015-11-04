@@ -41,7 +41,9 @@ $scope.useChangeFn = ->
 ```
 
 ```jade
-date-time-picker(ng-model="dateTimeModel", min-date="min", max-date="max", change-fn="useChangeFn", use-keyboard-input="{{useKeyboardInput}}", use-error-msg="true", error-message="Test error message.")
+~~date-time-picker(ng-model="dateTimeModel", min-date="min", max-date="max", change-fn="useChangeFn", use-keyboard-input="{{useKeyboardInput}}", use-error-msg="true", error-message="Test error message.")~~
+
+date-time-picker(ng-model="dateTimeModel", min-date="min", max-date="max", change-fn="useChangeFn", use-keyboard-input="{{useKeyboardInput}}")
 ```
 
 
