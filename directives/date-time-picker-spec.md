@@ -33,8 +33,8 @@ scope.ngModel = moment().toDate()
 
 ### Simple Code
 ```coffeescript
-$scope.min = "2015-10-05" | moment("2015-10-05").toDate() | "2015-10-14T00:00:00.000Z"
-$scope.max = 同 $scope.min
+$scope.min = "2015-10-05" | moment("2015-10-05").toDate() | "2015-10-05T00:00:00.000Z"
+$scope.max = "2015-10-15" | moment("2015-10-15").toDate() | "2015-10-15T00:00:00.000Z"
 $scope.useKeyboardInput = false
 $scope.useChangeFn = ->
   console.log "get change" + Date.now()
