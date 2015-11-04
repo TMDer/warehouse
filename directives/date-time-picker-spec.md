@@ -27,8 +27,8 @@ scope.ngModel = moment().toDate()
 * postfix: 傳入的資料類型 String，Datetime 最後顯示的文字，預設是 Asia Taipei 、台北時間
 * useKeyboardInput: 傳入的資料類型 Boolean，是否可以用鍵盤輸入日期和時間，預設是 true
 * formElementName: 傳入的資料類型 String，自訂 element 的 Form name，預設是 datetimepicker-亂數
-* errorMessage: 傳入的資料類型 String，設定 required error 的訊息，預設是 Oops, something error.
-* useErrorMsg: 傳入的資料類型 Boolean，是否顯示 reuqired error 的訊息，預設是 false
+* ~~errorMessage: 傳入的資料類型 String，設定 required error 的訊息，預設是 Oops, something error.~~
+* ~~useErrorMsg: 傳入的資料類型 Boolean，是否顯示 reuqired error 的訊息，預設是 false~~
 * changeFn: 傳入的資料類型 fucntion 表達式，ngModel 有更動時觸發
 
 ### Simple Code
