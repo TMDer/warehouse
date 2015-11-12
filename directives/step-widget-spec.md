@@ -33,7 +33,7 @@
    	
 * width: 設定 UI 的寬度 (default 為 100%)	
 ### Step block
-Step title 下方的所顯示的內容只要寫下 step directive 底下即可，如下方範例的`p`
+Step title 下方的所顯示的內容只要寫下 step directive 底下即可，如下方範例的`p`  
 
-     step(status="steptype" which-step="{{titleData.number}}" step-title="{titleData.text}" disabled="stepDisabled" edit-click="stepClick()" is-finish="stepStatus")
-        p sdfsd
+     	step(status="steptype" which-step="{{titleData.number}}" step-title="{titleData.text}" disabled="stepDisabled" edit-click="stepClick()" is-finish="stepStatus")
+        	p sdfsd
