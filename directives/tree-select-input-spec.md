@@ -79,50 +79,53 @@
 
 
 ## Attributes
-* input-param：  
+* `input-param`：  
 	*optional*，parameter about input，it can set `placeholder`  
 	`notice`：設定 notice 所顯示的資訊  
 	`dataKey`：設定 treedata 要顯示出哪個欄位的資料  
 	`pattern`：設定 input 欄位的正則表達式  
 	`noticeColor`：設定 notice 訊息的顏色，支援`red`和`green`，當沒有設定時，會預設黑色  
 	
-* tree-options：  
+* `tree-options`：  
 	*optional*，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。
 
-* tree-data：  
+* `tree-data`：  
 	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。
 
-* filter-comparator：  
+* `filter-comparator`：  
  default is `false`. The filter comparator is used in determining if the expected value (from the filter expression) and actual value (from the object in the array) should be considered a match.  
 	`false`：it looks for substring match in a case insensitive way (the default).  
 	`true`：it looks for exact match. 
 
-* no-button：  
+* `no-button`：  
 	*optional*。(Boolean)，預設為`false`。值為`true`的話，會隱藏 toggle tree 的按鈕。
 
-* selected-data：  
+* `selected-data`：  
 	**required**，用於綁定被選取項目的資料，格式為 array
 
-* init-selected-data：  
+* `init-selected-data`：  
 	*optional*。可以設定預設備綁定的資料，其資料格式帶入已選項目的`id`即可。
 
-* tree-disable：  
+* `tree-disable`：  
 	*optional*，會設定 tree 是否可用 enable 或 disable(Boolean)。
 
-* on-select：  
+* `on-select`：  
 	*optional*，當選取項目時會執行的 function，回傳的參數會有項目的資料和是否被選取的 boolean 值。
 	`true` 是被選取，`false`反之
 
-* tree-width：  
+* `tree-width`：  
 	*optional*，設定套件的寬度。
 	
-* tree-object：
-	*optional*，可以讓 directive 綁定的 object，回提供`selectedNode(node, selected)`的 function  
+* `tree-object`：  
+	*optional*，可以讓 directive 綁定的 object，會提供`selectedNode(node, selected)`的 function  
 	`selectedNode`：`node`的格式跟`init-selected-data`要帶入`id`欄位，`selected`為 boolean，設定是否被選曲
+	`mappingSelectedDataToDisabled`：第一個參數傳入要找尋的 tree data，第二個參數傳入要被選取的 data。
 
-* `onInputChange`：
+* `on-input-change`：  
 	*optinoal*，當 input 有輸入資料的時候會執行的 function，會回傳 input 正在輸入的值和 pattern 的測試結果。
 
+* `open-insert`：  
+	*optional*，支援可以透過 enter 就增加到 tag 
 
 
 
