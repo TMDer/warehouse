@@ -91,7 +91,14 @@
 
 * `tree-data`：  
 	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。
-
+	*optional* 給 disabled: true 的屬性， tag 就會有 disabled 的效果（範例如下）
+	```
+	example : [
+	   {id: 1111, name: "沒有 disabeld 效果的藍色 tag"},
+	   {id: 1111, name: "有 disabeld 效果的深灰色tag", disabled: true}
+	]
+	```
+	
 * `filter-comparator`：  
  default is `false`. The filter comparator is used in determining if the expected value (from the filter expression) and actual value (from the object in the array) should be considered a match.  
 	`false`：it looks for substring match in a case insensitive way (the default).  
