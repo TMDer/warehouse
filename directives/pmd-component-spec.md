@@ -230,21 +230,26 @@ commonApp.basicDropdown
 #### 參數說明
 * items(required): 下拉選單的選項，可為一般陣列或有 key 值的物件陣列
 ```
+[{text:"皮卡丘", value:"Pikachu"}, {text:"哆拉A夢", value:"Doraemon"}, {text:"史努比", value:"Snoopy"}]
+
 [1, 2, 3, 4]
-[{A: a1, B: b1, C: c1}, {A: a2, B: b2}, {A: a3, C: c3}]
-```
-* item-key: 配合 items 使用，如果內部資料是 Object，則需要調入要查找的 key
-```
-[{A: a1, B: b1, C: c1}, {A: a2, B: b2}, {A: a3, C: c3}]
-item-key = A 時 => [a1, a2, a3]
-item-key = B 時 => [b1, b2]
-item-key = C 時 => [c1, c3]
+// 會轉成 => [{text:1, value:1}, {text:1, value:1, {text:1, value:1}]
+
+[{value:"Pikachu"},{value:"Doraemon"},{value:"Snoopy"}] 
+// 會轉成 => [{text:"Pikachu", value:"Pikachu"}, {text:"Doraemon", value:"Doraemon"}, {text:"Snoopy", value:"Snoopy"}]
 ```
 * dropdown-change: 使用者點選後觸發的動作 (Function)
 * dropdown-model: 下拉選單綁定的值
 * dropdown-disabled: 是否要停用這個物件(Boolean)，預設值是`false`
 * title: 當沒有綁定 dropdown-model 或 其實為空的時候，所要顯示的文字
 * width: 下拉選單寬度 
+* requiredName: 如果有設置, 會產生一個 hidden input 並且(name="{{requiredName}}" required), 可以讓 angular-form 驗證
+
+#### item 物件參數
+- text: 下拉選單要顯示的文字內容
+- value: 實際要被選取的值
+- color: 指定要顯示的文字顏色 (red/blue/green)
+- disabled: 是否要被 disabled
 
 #### dropdown-change 可以取得的 callback 參數
 - value: 選取的值
@@ -255,19 +260,14 @@ item-key = C 時 => [c1, c3]
 ```
 $scope.dropdownParam = {
   items1: [1, 3, 443, "aaa"]
-  items2: [
-    {A: "a1", B: "b1", C: "c1"}
-    {A: "a2", B: "b2", C: "c2"}
-    {A: "a3", C: "Cccccccccc cccccccccccccccccc"}
-  ]
+  items2: [{value:"Pikachu"},{value:"Doraemon"},{value:"Snoopy"}] 
+  items2: [{value:"Pikachu", color:"red"},{value:"Doraemon", disabled:true},{value:"Snoopy"}] 
   dropdownDisabled: false
   selectedItem: {
     a: "aaa"
     b: ""
     c: "c2"
   }
-  itemKey1: "B"
-  itemKey2: "C"
 }
 $scope.dropdownDisabled = false
 
@@ -277,30 +277,26 @@ $scope.changeDropdown = (value, index, event) ->
 
 $scope.changeDropdown2 = ->
   # return false 可以阻止 basicDropdown 把值設到 ng-model(如果有的話)
-  console.log "dropdownParam.selectedItem.a=", $scope.dropdownParam.selectedItem.a
-  console.log "dropdownParam.selectedItem.b=", $scope.dropdownParam.selectedItem.b
-  console.log "dropdownParam.selectedItem.c=", $scope.dropdownParam.selectedItem.c
-  $scope.dropdownParam.selectedItem.c = "c1"
   return false
 ```
 ```
 div
   | 選擇之後 disabled
   div
-    basic-dropdown(title="Please select a number" items="dropdownParam.items1"
+    basic-dropdown(title="Please select a number" items="dropdownParam.items"
     dropdown-change="changeDropdown"
     dropdown-model="dropdownParam.selectedItem.a" dropdown-disabled="dropdownDisabled")
     | selectedItem.a= {{dropdownParam.selectedItem.a}}
 div
-  | dropdown-change 回傳 false 的下拉選單,並改變 $scope. selectedItem3 = “c1”
+  | dropdown-change 回傳 false 的下拉選單
   div
-    basic-dropdown(items="dropdownParam.items2" item-key="dropdownParam.itemKey1"
+    basic-dropdown(items="dropdownParam.items2"
     dropdown-change="changeDropdown2" dropdown-model="dropdownParam.selectedItem.b")
     | selectedItem.b= {{dropdownParam.selectedItem.b}}
 div
-  | normal
+  | 客制化選項顏色 / disabled
   div
-    basic-dropdown(items="dropdownParam.items2" item-key="dropdownParam.itemKey2"
+    basic-dropdown(items="dropdownParam.items2" requiredName="yoo"
     dropdown-model="dropdownParam.selectedItem.c")
     | selectedItem.c= {{dropdownParam.selectedItem.c}}
 ```
