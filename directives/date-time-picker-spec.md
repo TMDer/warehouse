@@ -21,8 +21,8 @@ scope.ngModel = moment().toDate()
 
 ### 選填
 * isOpen: 回傳的資料類型 Boolean，date picker 開啟的依據
-* maxDate: 傳入的資料類型 String / Date (細節可看 simple code)，許可的最大日期
-* minDate: 傳入的資料類型 String / Date (細節可看 simple code)，許可的最小日期
+* maxDate: 傳入的資料類型 String / Date (細節可看 sample code)，許可的最大日期
+* minDate: 傳入的資料類型 String / Date (細節可看 sample code)，許可的最小日期
 * required: 傳入的資料類型 Boolean，用途是否使用 $vaild
 * postfix: 傳入的資料類型 String，Datetime 最後顯示的文字，預設是 Asia Taipei 、台北時間
 * useKeyboardInput: 傳入的資料類型 Boolean，是否可以用鍵盤輸入日期和時間，預設是 true
@@ -31,7 +31,7 @@ scope.ngModel = moment().toDate()
 * ~~useErrorMsg: 傳入的資料類型 Boolean，是否顯示 reuqired error 的訊息，預設是 false~~
 * changeFn: 傳入的資料類型 fucntion 表達式，ngModel 有更動時觸發
 
-### Simple Code
+### Sample Code
 ```coffeescript
 $scope.min = "2015-10-05" | moment("2015-10-05").toDate() | "2015-10-05T00:00:00.000Z"
 $scope.max = "2015-10-15" | moment("2015-10-15").toDate() | "2015-10-15T00:00:00.000Z"
