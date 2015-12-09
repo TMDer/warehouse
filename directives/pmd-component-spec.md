@@ -17,7 +17,7 @@ commonApp.basicBtn
 prev / next / cancel / submit / icon-create / icon-delete / icon-copy / icon-edit / icon-sync
 
 #### - color
-gray(default) / green / purple
+gray(default) / green / purple / white / blue
 
 #### - fa
 https://fortawesome.github.io/Font-Awesome/icons/
