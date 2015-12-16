@@ -90,9 +90,9 @@
 	*optional*，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。
 
 * `tree-data`：
-	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。
-	*optional* 給 disabled: true 的屬性， tag 就會有 disabled 的效果;
-	*optional* 給hidden: true, 該tag會被隱藏;
+	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。  
+	*optional* 給 disabled: true 的屬性， tag 就會有 disabled 的效果;  
+	*optional* 給hidden: true, 該tag會被隱藏;  
 
 	```
 	example : [
