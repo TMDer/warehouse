@@ -90,13 +90,13 @@
 	`dataKey`：設定 treedata 要顯示出哪個欄位的資料  
 	`pattern`：設定 input 欄位的正則表達式  
 	`noticeColor`：設定 notice 訊息的顏色，支援`red`和`green`，當沒有設定時，會預設黑色  
-	`text`: <String> binding input內的字串
+	`text`: \<String\> binding input內的字串
 
 * `tag-param`：  
 	`notice`：設定 notice 所顯示的資訊  
-		`text`: <String> notice的文字  
-		`show`: <Boolean> 是否顯示notice  
-		`color`: <Enumerator> 選擇notice的顏色, 提供的選項請參考basic-input
+		`text`: \<String\> notice的文字  
+		`show`: \<Boolean\> 是否顯示notice  
+		`color`: \<Enumerator\> 選擇notice的顏色, 提供的選項請參考basic-input
 	
 * `tree-options`：  
 	*optional*，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。
