@@ -99,7 +99,8 @@
 		`color`: \<Enumerator\> 選擇notice的顏色, 提供的選項請參考basic-input
 	
 * `tree-options`：  
-	*optional*，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。
+	*optional*，this parameter is as same as options parameter at [angular-tree-contorl](https://github.com/wix/angular-tree-control#usage)。  
+	`maxHeight`: *optional* 設定tree的最大高度, 預設155px(5個option)  
 
 * `tree-data`：
 	**required**，用來設定 tree 的資料。跟 input-param 中的 dateKey 必須配合使用，缺一不可。  
