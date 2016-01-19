@@ -1,4 +1,53 @@
-#### 選單： [basicButton](#basicbutton) | [basicCheckbox](#basiccheckbox) | [basicDropdown](#basicdropdown) | [basicInput](#basicinput) | [basicRadio](#basicradio)
+#### 選單： [trackComponents](#trackcomponents) | [basicButton](#basicbutton) | [basicCheckbox](#basiccheckbox) | [basicDropdown](#basicdropdown) | [basicInput](#basicinput) | [basicRadio](#basicradio)
+
+
+# Track Components
+## ::trackComponents  
+#### Module Name
+commonApp.trackComponents
+#### 參數說明
+* trackParams: Track Components 的參數，是一個陣列
+* 陣列裡面的 obj 分兩種
+ * key 只有 inputValue
+ * key 有 inputValue 以及 selectValue
+
+```
+trackParams = [
+  {
+    title: 'track-trigger-product-category'
+    discription: 'track-trigger-product-category'
+    inputValue: ''
+  }
+  {
+    title: 'track-trigger-product-name'
+    discription: 'track-trigger-product-category'
+    selectValue: ''
+    inputValue: ''
+  }
+]
+```
+
+#### 使用範例
+```
+##### coffee #####
+$scope.trackParams =  [
+  {
+    title: 'track-trigger-product-category'
+    discription: 'track-trigger-product-category'
+    inputValue: ''
+  }
+  {
+    title: 'track-trigger-product-name'
+    discription: 'track-trigger-product-category'
+    selectValue: ''
+    inputValue: ''
+  }
+]
+
+##### jade #####
+
+track-components(track-params="trackParams")
+```
 
 # Basic Component
 
