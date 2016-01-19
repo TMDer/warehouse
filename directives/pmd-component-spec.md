@@ -10,6 +10,10 @@ commonApp.trackComponents
 * 陣列裡面的 obj 分兩種
  * key 只有 inputValue
  * key 有 inputValue 以及 selectValue
+* title -> 為標題，請放入 i18n 的 key 值
+* discription -> 為標題的描述，請放入 i18n 的 key 值
+* inputValue -> 為單一 input 的值
+* selectValue -> 為 element 的值，目前選項有 'id', 'class', 'name', 'customSelection'
 
 ```
 trackParams = [
