@@ -1,6 +1,6 @@
 # Spec 基本架構
 
-```
+```javascript
 // 群組
 describe "[CRUD] Audience", (done) ->
 
