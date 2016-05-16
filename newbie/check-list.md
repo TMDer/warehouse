@@ -19,6 +19,6 @@
 * [ ] 加入 GitLab
 * [ ] 加入 Github
 * [ ] 加入 Trello
-* [ ] 加入 Zeplin
+* [ ] ~~加入 Zeplin~~
 * [ ] 加入 Facebook 權限
 
