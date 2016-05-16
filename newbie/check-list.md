@@ -21,4 +21,5 @@
 * [ ] 加入 Trello
 * [ ] ~~加入 Zeplin~~
 * [ ] 加入 Facebook 權限
+* [ ] 申請 AdMiner 帳號
 
