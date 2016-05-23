@@ -5,7 +5,7 @@
 # install
 
 ```
-npm install -g protractor
+npm install -g protractor@2.5.1
 webdriver-manager update
 npm install -g mocha
 ```
