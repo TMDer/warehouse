@@ -1,18 +1,18 @@
 # commit message 規範
 
 ### 提交的 commit message
-#####[type(required) #ticket(required)] project(option):  subject(required)
+#####[type(required) #ticket(required)] project:(option) subject(required)
 
 ### type
 
 1. [feature #1234] web AA: add tracer for bug
 - [hotfix #1274] mobile AA: tracker domain fix audience webaa flow
-- [docs #1234]: add commit log docs
+- [docs #1234] add commit log docs
 - [refactor #1222] API: 調整 API Log 記錄方式
-- [test #1224]: test createAA web audience flow
-- [chore #1111]: update jquery version
-- [hw #0001]: update jquery version
-- [demo #1001]: update jquery version
+- [test #1224] test createAA web audience flow
+- [chore #1111] update jquery version
+- [hw #0001] create movie project
+- [demo #1001] add demo project
 
 ### project
 - 說明項目名稱
