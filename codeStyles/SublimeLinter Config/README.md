@@ -62,7 +62,7 @@
 
 * 註1：位置參照 [Sublimelinter 設定](#sublimelinter-setting)
 * 註2：coffeelint 路徑記得前後加單引號（雙引號也可）
-* 註3：參考連結 [SublimeLinter-coffeelint](#https://github.com/SublimeLinter/SublimeLinter-coffeelint)
+* 註3：參考連結 [SublimeLinter-coffeelint](https://github.com/SublimeLinter/SublimeLinter-coffeelint)
 
 ## 參考
 
