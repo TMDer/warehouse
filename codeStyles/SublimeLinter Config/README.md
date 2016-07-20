@@ -56,11 +56,11 @@
 
 | 問題 | 解決方式 |
 |---|---|
-| coffeelint 無法正常執行 | 1. 開啟 terminal 執行 which coffeelint <br> 2. 複製搜尋出的路徑 <br> 3. 開啟 Sublimelinter 的 User 設定 [註1] <br> 4. 將 coffeelint 路徑放到 paths > osx [註2] <br> 5. 如果你用 nvm 和 zsh, 請確保設定是在 .zshenv 不是 .zshrc. [註3]|
+| coffeelint 無法正常執行 | 1. 開啟 terminal 執行 which coffeelint <br> 2. 複製搜尋出的路徑 <br> 3. 開啟 Sublimelinter 的 User 設定 [註1] <br> 4. 將 coffeelint 路徑放到 paths > osx [註2] <br> 5. 如果你用 nvm 和 zsh, 請確保設定是在 .zshenv 不是 .zshrc. ([其他環境])|
 
 * 註1：位置參照 [Sublimelinter 設定](#sublimelinter-setting)
 * 註2：coffeelint 路徑記得前後加單引號（雙引號也可）
-* 註3：參考連結 [SublimeLinter-coffeelint](https://github.com/SublimeLinter/SublimeLinter-coffeelint)
+[其他環境]: http://www.sublimelinter.com/en/latest/troubleshooting.html#adjusting-shell-startup-files
 
 ## 參考
 
