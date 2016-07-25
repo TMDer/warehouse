@@ -14,8 +14,9 @@ dontFlattenConfig: true
 棄用「onDisconnect」改以下內容取代
   
 ``` node
-afterDisconnect: (session, socket)  ->  
+afterDisconnect: (session, socket, cb)  ->  
   SocketService.onConnect session, socket
+  cb()
 ```
   
 adapter: 'redis'  
