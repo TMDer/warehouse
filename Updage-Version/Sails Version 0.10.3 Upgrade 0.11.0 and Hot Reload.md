@@ -1,4 +1,5 @@
 ### Sails Version 0.10.3 Upgrade 0.11.0 and Hot Reload
+為了讓node後端不用在更改後還要等待重新Start的時間，使用了「sails-hook-autoreload」這個套件，讓開發時間能大幅加速
   
 #### 安裝 -> 
 安裝好 Sails 0.11.0 版本後，下二個指令   
