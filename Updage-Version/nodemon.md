@@ -14,3 +14,6 @@ npm i nodemon -g
 
 專案下執行指令
 sudo nodemon app.js
+
+解安裝指令
+npm uninstall nodemon -g
